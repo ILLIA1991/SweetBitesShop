@@ -13,8 +13,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-
-    /*
     @Service
 @AllArgsConstructor
 public class ProductServiceImpl implements ProductService {
@@ -26,14 +24,14 @@ public class ProductServiceImpl implements ProductService {
     public List<ProductDTO> getAllProducts() {
         List<Product> allProducts = productRepository.findAll();
 
-        return allProducts.stream()
+          return allProducts.stream()
                 .map(productMapper::toProductDTO)
                 .collect(Collectors.toList());
     }
 
     @Override
     public ProductDTO getById(Integer id) {
-        ProductDTO product = productRepository.findById(id).orElseThrow(() -> new OnlineShopNotFoundException("Product not found: " + id));
+        Product product = productRepository.findById(id).orElseThrow(() -> new OnlineShopNotFoundException("Product not found: " + id));
         return productMapper.map(product, ProductDTO.class);
 
     }
@@ -48,19 +46,18 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void deleteById(Integer id) {
-        ProductDTO product = productRepository.findById(id).orElseThrow(() -> new OnlineShopNotFoundException("You are not with us anymore!: " + id));
+        Product product = productRepository.findById(id).orElseThrow(() -> new OnlineShopNotFoundException("You are not with us anymore!: " + id));
         productRepository.delete(product);
 
     }
 
     @Override
     public ProductDTO updateProduct(Integer id, ProductDTO productsToUpdate) {
-        ProductDTO existingProduct = productRepository.findById(id)
+        Product existingProduct = productRepository.findById(id)
                 .orElseThrow(() -> new OnlineShopNotFoundException("Product not found: " + id));
         productMapper.updateProductFromDTO(productsToUpdate, existingProduct);
-        ProductDTO updatedProduct = productRepository.save(existingProduct);
+        Product updatedProduct = productRepository.save(existingProduct);
         return productMapper.toProductDTO(updatedProduct);
     }
 }
 
-     */
