@@ -1,6 +1,5 @@
 package com.web.onlineshop.dto;
 
-import com.web.onlineshop.statusorder.StatusOrder;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
