@@ -1,4 +1,4 @@
-package com.web.onlineshop.statusorder;
+package com.web.onlineshop.dto;
 
 public enum StatusOrder {
 
