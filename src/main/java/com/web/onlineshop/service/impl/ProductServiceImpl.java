@@ -6,21 +6,25 @@ import com.web.onlineshop.repository.ProductRepository;
 import com.web.onlineshop.repository.mappers.ProductMapper;
 import com.web.onlineshop.repository.model.Product;
 import com.web.onlineshop.service.ProductService;
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 
-    @Service
-@AllArgsConstructor
+@Service
 public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
 
     private final ProductMapper productMapper;
-      @Override
+
+    public ProductServiceImpl(ProductRepository productRepository, ProductMapper productMapper) {
+        this.productRepository = productRepository;
+        this.productMapper = productMapper;
+    }
+
+    @Override
     public List<ProductDTO> getAllProducts() {
         List<Product> allProducts = productRepository.findAll();
 
@@ -32,7 +36,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ProductDTO getById(Integer id) {
         Product product = productRepository.findById(id).orElseThrow(() -> new OnlineShopNotFoundException("Product not found: " + id));
-        return productMapper.map(product, ProductDTO.class);
+        return productMapper.toProductDTO(product);
 
     }
 
