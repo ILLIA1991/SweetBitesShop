@@ -3,6 +3,7 @@ package com.web.onlineshop.repository.model;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 
 @Entity
 @Table(name = "client")
@@ -35,4 +36,7 @@ public class Client {
 
     }
 
+    public Integer getId() {
+        return id;
+    }
 }

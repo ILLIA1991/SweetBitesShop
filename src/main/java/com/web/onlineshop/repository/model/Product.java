@@ -3,6 +3,7 @@ package com.web.onlineshop.repository.model;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
@@ -12,14 +13,21 @@ import java.math.BigDecimal;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor //Добавил пустой конструктор
+@Getter
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "name")
     private String name;
-    @Column(name = "flavourCategory")
+    @OneToOne
+    @JoinColumn(name = "flavour_category")
     private FlavourCategory flavourCategory;
     @Column(name = "price")
     private BigDecimal price;
+
+
+    public Integer getId() {
+        return id;
+    }
 }

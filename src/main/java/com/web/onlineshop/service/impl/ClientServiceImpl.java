@@ -5,18 +5,21 @@ import com.web.onlineshop.exception.OnlineShopNotFoundException;
 import com.web.onlineshop.repository.ClientRepository;
 import com.web.onlineshop.repository.mappers.ClientMapper;
 import com.web.onlineshop.service.ClientService;
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-@AllArgsConstructor
 public class ClientServiceImpl implements ClientService {
 
     private final ClientRepository clientRepository;
     private final ClientMapper clientMapper;
+
+    public ClientServiceImpl(ClientRepository clientRepository, ClientMapper clientMapper) {
+        this.clientRepository = clientRepository;
+        this.clientMapper = clientMapper;
+    }
 
     /**
      * Получить всех клиентов.
@@ -44,7 +47,7 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public ClientDTO getById(Integer id) {
         Client client = clientRepository.findById(id).orElseThrow(() -> new OnlineShopNotFoundException("Client not found: " + id));
-        return clientMapper.map(client, ClientDTO.class);
+        return clientMapper.toClientDTO(client);
     }
 
     /**

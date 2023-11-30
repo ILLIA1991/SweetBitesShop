@@ -1,6 +1,7 @@
 package com.web.onlineshop.configuration;
 
 import com.web.onlineshop.repository.mappers.ClientMapper;
+import com.web.onlineshop.repository.mappers.FlavourCategoryMapper;
 import com.web.onlineshop.repository.mappers.ProductMapper;
 import org.mapstruct.factory.Mappers;
 import org.modelmapper.ModelMapper;
@@ -19,5 +20,10 @@ public class ModelMapperConfig {
     @Bean
     public ProductMapper productMapper() {
         return Mappers.getMapper(ProductMapper.class);
+    }
+
+    @Bean
+    public FlavourCategoryMapper flavourCategoryMapper() {
+        return Mappers.getMapper(FlavourCategoryMapper.class);
     }
 }
