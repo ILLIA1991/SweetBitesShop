@@ -1,5 +1,6 @@
 package com.web.onlineshop.service.impl;
 
+import com.web.onlineshop.dto.ClientDTO;
 import com.web.onlineshop.dto.ProductDTO;
 import com.web.onlineshop.exception.OnlineShopNotFoundException;
 import com.web.onlineshop.repository.ProductRepository;
@@ -28,9 +29,10 @@ public class ProductServiceImpl implements ProductService {
     public List<ProductDTO> getAllProducts() {
         List<Product> allProducts = productRepository.findAll();
 
-          return allProducts.stream()
+          List<ProductDTO> allProductDTOs =  allProducts.stream()
                 .map(productMapper::toProductDTO)
                 .collect(Collectors.toList());
+          return allProductDTOs;
     }
 
     @Override

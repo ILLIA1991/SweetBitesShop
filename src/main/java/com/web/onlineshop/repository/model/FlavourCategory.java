@@ -13,7 +13,8 @@ public class FlavourCategory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "name")
-    private String name;
+    @Enumerated(EnumType.STRING)
+    private NameFlavours flavours;
     @Column(name = "description")
     private String description;
 

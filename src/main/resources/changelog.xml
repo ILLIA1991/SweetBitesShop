@@ -12,5 +12,4 @@
     <include file="changelog/005-insert_orders_data.xml" relativeToChangelogFile="true"/>
     <include file="changelog/006-insert_orders_details_data.xml" relativeToChangelogFile="true"/>
 
-
 </databaseChangeLog>
