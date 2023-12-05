@@ -1,21 +1,21 @@
 import styled from "@emotion/styled";
 import { mq, colors } from "../../utils";
 
-export const HeaderContainer = styled.header`
+export const HeaderW = styled.header`
+  background-color: ${colors.backgroundHeader};
+`;
+
+export const Wraper = styled.div`
   ${mq.tablet} {
     justify-content: space-around;
-    padding: 16px 0;
+    padding-top: 32px;
     align-items: center;
   }
   display: flex;
-  background-color: ${colors.backgroundHeader};
   justify-content: space-around;
-  padding: 16px 0;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 28px;
 `;
-
 export const Logo = styled.div`
   display: flex;
   align-items: center;
@@ -68,20 +68,20 @@ export const NavList = styled.ul`
   ${mq.tablet} {
     display: flex;
     flex-direction: row;
+    gap: 160px;
   }
 `;
 
 export const NavItem = styled.li`
   list-style: none;
-  margin: 16px 0;
 `;
 
 export const NavLink = styled.button`
+  font-family: Gabarito;
   background-color: transparent;
-  padding: 10px;
+  /* padding: 10px; */
   color: ${colors.white};
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 20px;
   border: none;
   cursor: pointer;
   ${mq.tablet} {
@@ -129,3 +129,9 @@ export const ToggleButton = styled.button`
     display: inline;
   }
 `;
+export const SecondList = styled.ul`
+  display: flex;
+  gap: 20px;
+`;
+
+export const SecondItem = styled.li``;
