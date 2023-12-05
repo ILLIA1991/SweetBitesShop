@@ -3,6 +3,8 @@ import { mq, colors } from "../../utils";
 
 export const Wraper = styled.div`
   height: 960px;
+   padding-left: 80px;
+  padding-right: 80px;
   background-color: ${colors.backgroundHeader};
 `;
 export const Title = styled.h1`

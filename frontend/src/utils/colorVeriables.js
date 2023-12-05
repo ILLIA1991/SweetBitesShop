@@ -5,6 +5,7 @@ const colors = {
   backdrop: "rgba(22, 22, 22, 0.5)",
   pimkLight: "rgba(232, 142, 172, 0.36)",
   grean: "rgba(121, 163, 93, 1)",
+  greanLight: "rgba(192, 213, 163, 1)",
 };
 
 export default colors;
