@@ -5,6 +5,7 @@ export const Section = styled.section`
   padding-top: 90px;
   padding-left: 80px;
   padding-right: 80px;
+  padding-bottom: 90px;
   background-color: ${colors.pimkLight};
 `;
 export const WrapImg = styled.div``;
