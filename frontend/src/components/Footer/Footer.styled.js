@@ -32,6 +32,12 @@ export const WraperList = styled.ul`
 export const Link = styled.a`
   color: #fcf3f6;
 `;
+
+export const WrapCopy = styled.div`
+  display: flex;
+  padding-bottom: 34px;
+`;
+
 export const Items = styled.li`
   font-family: Gabarito;
   font-size: 24px;
@@ -41,10 +47,7 @@ export const Items = styled.li`
   text-transform: capitalize;
 `;
 
-export const WrapCopy = styled.div`
-  display: flex;
-  padding-bottom: 34px;
-`;
+
 export const SpanCopyRight = styled.span`
   color: #fcf3f6;
   font-family: Gabarito;
