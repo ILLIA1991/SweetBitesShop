@@ -5,12 +5,14 @@ import com.web.onlineshop.exception.OnlineShopNotFoundException;
 import com.web.onlineshop.repository.ClientRepository;
 import com.web.onlineshop.repository.mappers.ClientMapper;
 import com.web.onlineshop.service.ClientService;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional(readOnly = true)
 public class ClientServiceImpl implements ClientService {
 
     private final ClientRepository clientRepository;
@@ -58,6 +60,7 @@ public class ClientServiceImpl implements ClientService {
      */
 
     @Override
+    @Transactional
     public Integer createClient(ClientDTO clientsToCreate) {
         Client clientToSave = clientMapper.toClient(clientsToCreate) ;
         // Сохраняю нового клиента в репозитории
@@ -67,6 +70,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
+    @Transactional
     public void deleteById(Integer id) {
         //поскольку я просто удаляю клиента по идентификатору, нет необходимости в использовать MapStruct
         Client client = clientRepository.findById(id).orElseThrow(() -> new OnlineShopNotFoundException("You are not with us anymore!: " + id));
@@ -75,6 +79,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
+    @Transactional
     public ClientDTO updateClient(Integer id, ClientDTO clientsToUpdate) {
         Client existingClient = clientRepository.findById(id)
                 .orElseThrow(() -> new OnlineShopNotFoundException("Client not found: " + id));

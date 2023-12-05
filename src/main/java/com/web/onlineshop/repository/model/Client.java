@@ -5,11 +5,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 
+import java.io.Serializable;
+
 @Entity
 @Table(name = "client")
 @Data
 @AllArgsConstructor
-public class Client {
+public class Client  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -39,4 +41,6 @@ public class Client {
     public Integer getId() {
         return id;
     }
+
+
 }
