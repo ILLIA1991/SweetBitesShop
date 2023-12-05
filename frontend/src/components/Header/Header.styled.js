@@ -7,14 +7,13 @@ export const HeaderW = styled.header`
 
 export const Wraper = styled.div`
   ${mq.tablet} {
-    justify-content: space-around;
+    justify-content: space-between;
     padding-top: 32px;
     align-items: center;
   }
   display: flex;
-  justify-content: space-around;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 `;
 export const Logo = styled.div`
   display: flex;
