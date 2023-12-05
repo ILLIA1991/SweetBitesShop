@@ -19,7 +19,7 @@ export const Items = styled.li`
   align-items: center;
   background-color: ${colors.backgroundHeader};
 `;
-export const Title = styled.h4`
+export const Title = styled.h2`
   margin-top: 15px;
   color: ${colors.primary};
   font-size: 28px;
