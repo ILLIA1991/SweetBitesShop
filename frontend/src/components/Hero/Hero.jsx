@@ -2,6 +2,7 @@ import React from "react";
 import { Wraper, Title, Button, Img, Span } from "./Hero.styled";
 import hero from "../../img/hero.png";
 import sprite from "../../img/symbol-defs.svg";
+import { Advantages } from "../Advantages/Advantages";
 
 export const Hero = () => {
   return (
@@ -20,6 +21,7 @@ export const Hero = () => {
           </svg>
         </Button>
       </Wraper>
+      <Advantages />
     </>
   );
 };

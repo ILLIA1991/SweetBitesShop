@@ -10,6 +10,8 @@ export const Wraper = styled.div`
     justify-content: space-between;
     padding-top: 32px;
     align-items: center;
+     padding-left: 80px;
+  padding-right: 80px;
   }
   display: flex;
   justify-content: space-between;
