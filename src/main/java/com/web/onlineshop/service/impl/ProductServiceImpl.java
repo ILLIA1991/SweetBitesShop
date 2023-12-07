@@ -1,6 +1,5 @@
 package com.web.onlineshop.service.impl;
 
-import com.web.onlineshop.dto.ClientDTO;
 import com.web.onlineshop.dto.ProductDTO;
 import com.web.onlineshop.exception.OnlineShopNotFoundException;
 import com.web.onlineshop.repository.ProductRepository;
@@ -11,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -29,10 +27,10 @@ public class ProductServiceImpl implements ProductService {
     public List<ProductDTO> getAllProducts() {
         List<Product> allProducts = productRepository.findAll();
 
-          List<ProductDTO> allProductDTOs =  allProducts.stream()
+        List<ProductDTO> allProductDTOs = allProducts.stream()
                 .map(productMapper::toProductDTO)
                 .collect(Collectors.toList());
-          return allProductDTOs;
+        return allProductDTOs;
     }
 
     @Override

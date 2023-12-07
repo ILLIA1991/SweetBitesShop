@@ -3,7 +3,6 @@ package com.web.onlineshop.repository.mappers;
 import com.web.onlineshop.dto.ClientDTO;
 import com.web.onlineshop.repository.model.Client;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 

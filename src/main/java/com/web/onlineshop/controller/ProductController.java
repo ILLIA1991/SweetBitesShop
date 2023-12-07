@@ -21,7 +21,7 @@ public class ProductController {
     }
 
     @GetMapping
-    public List<ProductDTO> getAll(){
+    public List<ProductDTO> getAll() {
         return productService.getAllProducts();
     }
 
@@ -31,7 +31,7 @@ public class ProductController {
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Integer id){
+    public void delete(@PathVariable Integer id) {
         productService.deleteById(id);
     }
 
@@ -39,5 +39,4 @@ public class ProductController {
     public ProductDTO update(@PathVariable Integer id, @RequestBody ProductDTO productToUpdate) {
         return productService.updateProduct(id, productToUpdate);
     }
-
 }
