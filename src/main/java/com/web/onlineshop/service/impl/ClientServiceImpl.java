@@ -1,12 +1,13 @@
 package com.web.onlineshop.service.impl;
-import com.web.onlineshop.repository.model.Client;
+
 import com.web.onlineshop.dto.ClientDTO;
 import com.web.onlineshop.exception.OnlineShopNotFoundException;
 import com.web.onlineshop.repository.ClientRepository;
 import com.web.onlineshop.repository.mappers.ClientMapper;
+import com.web.onlineshop.repository.model.Client;
 import com.web.onlineshop.service.ClientService;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -39,6 +40,7 @@ public class ClientServiceImpl implements ClientService {
                 .collect(Collectors.toList());
         return allClientDTOs;
     }
+
     /**
      * Получить клиента по идентификатору.
      *
@@ -62,7 +64,7 @@ public class ClientServiceImpl implements ClientService {
     @Override
     @Transactional
     public Integer createClient(ClientDTO clientsToCreate) {
-        Client clientToSave = clientMapper.toClient(clientsToCreate) ;
+        Client clientToSave = clientMapper.toClient(clientsToCreate);
         // Сохраняю нового клиента в репозитории
         Client savedClient = clientRepository.save(clientToSave);
         // Возвращаю идентификатор созданного клиента

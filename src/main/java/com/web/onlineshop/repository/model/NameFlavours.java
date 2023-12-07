@@ -21,7 +21,7 @@ public enum NameFlavours {
     public static NameFlavours findByValue(String value) {
         NameFlavours result = null;
         for (NameFlavours flavours : values()) {
-            if(flavours.getValue().equalsIgnoreCase(value)) {
+            if (flavours.getValue().equalsIgnoreCase(value)) {
                 result = flavours;
                 break;
             }
@@ -29,5 +29,4 @@ public enum NameFlavours {
         }
         return result;
     }
-
 }

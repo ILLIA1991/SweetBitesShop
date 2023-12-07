@@ -1,12 +1,8 @@
 package com.web.onlineshop.dto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 
 import java.util.Objects;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ClientDTO {
     private Integer id;
     private String name;
@@ -14,19 +10,19 @@ public class ClientDTO {
     private String email;
     private String address;
     private String country;
-    private String phone_number;
+    private String phoneNumber;
 
     public ClientDTO() {
     }
 
-    public ClientDTO(Integer id, String name, String surname, String email, String address, String country, String phone_number) {
+    public ClientDTO(Integer id, String name, String surname, String email, String address, String country, String phoneNumber) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.address = address;
         this.country = country;
-        this.phone_number = phone_number;
+        this.phoneNumber = phoneNumber;
     }
 
     public Integer getId() {
@@ -77,12 +73,12 @@ public class ClientDTO {
         this.country = country;
     }
 
-    public String getPhone_number() {
-        return phone_number;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     @Override
@@ -90,12 +86,12 @@ public class ClientDTO {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ClientDTO clientDTO = (ClientDTO) o;
-        return Objects.equals(id, clientDTO.id) && Objects.equals(name, clientDTO.name) && Objects.equals(surname, clientDTO.surname) && Objects.equals(email, clientDTO.email) && Objects.equals(address, clientDTO.address) && Objects.equals(country, clientDTO.country) && Objects.equals(phone_number, clientDTO.phone_number);
+        return Objects.equals(id, clientDTO.id) && Objects.equals(name, clientDTO.name) && Objects.equals(surname, clientDTO.surname) && Objects.equals(email, clientDTO.email) && Objects.equals(address, clientDTO.address) && Objects.equals(country, clientDTO.country) && Objects.equals(phoneNumber, clientDTO.phoneNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, surname, email, address, country, phone_number);
+        return Objects.hash(id, name, surname, email, address, country, phoneNumber);
     }
 
     @Override
@@ -107,7 +103,7 @@ public class ClientDTO {
                 ", email='" + email + '\'' +
                 ", address='" + address + '\'' +
                 ", country='" + country + '\'' +
-                ", phone_number='" + phone_number + '\'' +
+                ", phone_number='" + phoneNumber + '\'' +
                 '}';
     }
 }

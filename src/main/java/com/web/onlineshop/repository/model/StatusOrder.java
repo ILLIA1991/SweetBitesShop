@@ -1,4 +1,4 @@
-package com.web.onlineshop.dto;
+package com.web.onlineshop.repository.model;
 
 public enum StatusOrder {
 

@@ -1,10 +1,6 @@
 package com.web.onlineshop.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
 import java.util.Objects;
-
 
 public class FlavourCategoryDTO {
 
@@ -12,14 +8,14 @@ public class FlavourCategoryDTO {
     private String name;
     private String description;
 
+    public FlavourCategoryDTO() {
+
+    }
+
     public FlavourCategoryDTO(Integer id, String name, String description) {
         this.id = id;
         this.name = name;
         this.description = description;
-    }
-
-    public FlavourCategoryDTO() {
-
     }
 
     public Integer getId() {

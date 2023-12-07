@@ -1,6 +1,6 @@
 package com.web.onlineshop.service;
 
-import com.web.onlineshop.dto.ClientDTO;;
+import com.web.onlineshop.dto.ClientDTO;
 
 import java.util.List;
 

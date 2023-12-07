@@ -1,11 +1,6 @@
 package com.web.onlineshop.repository.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-
-import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
