@@ -13,16 +13,16 @@ public class FlavourCategory {
     private Integer id;
     @Column(name = "name")
     @Enumerated(EnumType.STRING)
-    private NameFlavours flavours;
+    private NameFlavours name; //изменили с flavour
     @Column(name = "description")
     private String description;
 
     public FlavourCategory() {
     }
 
-    public FlavourCategory(Integer id, NameFlavours flavours, String description) {
+    public FlavourCategory(Integer id, NameFlavours name, String description) {
         this.id = id;
-        this.flavours = flavours;
+        this.name = name;
         this.description = description;
     }
 
@@ -34,12 +34,12 @@ public class FlavourCategory {
         this.id = id;
     }
 
-    public NameFlavours getFlavours() {
-        return flavours;
+    public NameFlavours getName() {
+        return name;
     }
 
-    public void setFlavours(NameFlavours flavours) {
-        this.flavours = flavours;
+    public void setName(NameFlavours name) {
+        this.name = name;
     }
 
     public String getDescription() {
@@ -55,19 +55,19 @@ public class FlavourCategory {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         FlavourCategory that = (FlavourCategory) o;
-        return Objects.equals(id, that.id) && flavours == that.flavours && Objects.equals(description, that.description);
+        return Objects.equals(id, that.id) && name == that.name && Objects.equals(description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, flavours, description);
+        return Objects.hash(id, name, description);
     }
 
     @Override
     public String toString() {
         return "FlavourCategory{" +
                 "id=" + id +
-                ", flavours=" + flavours +
+                ", flavours=" + name +
                 ", description='" + description + '\'' +
                 '}';
     }

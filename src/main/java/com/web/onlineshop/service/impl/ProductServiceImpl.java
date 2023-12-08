@@ -27,10 +27,9 @@ public class ProductServiceImpl implements ProductService {
     public List<ProductDTO> getAllProducts() {
         List<Product> allProducts = productRepository.findAll();
 
-        List<ProductDTO> allProductDTOs = allProducts.stream()
+        return allProducts.stream()
                 .map(productMapper::toProductDTO)
                 .collect(Collectors.toList());
-        return allProductDTOs;
     }
 
     @Override
