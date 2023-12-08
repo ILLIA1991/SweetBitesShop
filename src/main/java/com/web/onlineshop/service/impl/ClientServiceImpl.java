@@ -35,10 +35,9 @@ public class ClientServiceImpl implements ClientService {
         List<Client> allClients = clientRepository.findAll();
 
         // Применяем маппер к каждому клиенту
-        List<ClientDTO> allClientDTOs = allClients.stream()
+        return allClients.stream()
                 .map(clientMapper::toClientDTO)
                 .collect(Collectors.toList());
-        return allClientDTOs;
     }
 
     /**

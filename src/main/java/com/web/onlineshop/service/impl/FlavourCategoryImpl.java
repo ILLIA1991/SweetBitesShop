@@ -25,10 +25,9 @@ public class FlavourCategoryImpl implements FlavourCategoryService {
     public List<FlavourCategoryDTO> getAllFlavours() {
         List<FlavourCategory> allFlavourCategory = flavourCategoryRepository.findAll();
 
-        List<FlavourCategoryDTO> allFlavourDTOs = allFlavourCategory.stream()
-                .map(flavourCategory -> flavourCategoryMapper.toFlavourCategoryDTO(flavourCategory))
+        return allFlavourCategory.stream()
+                .map(flavourCategoryMapper::toFlavourCategoryDTO)
                 .collect(Collectors.toList());
-        return allFlavourDTOs;
     }
 
     @Override
