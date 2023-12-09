@@ -90,15 +90,19 @@
             <version>42.6.0</version> <!-- Версия может отличаться -->
         </dependency>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.30</version>
-            <scope>provided</scope>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>3.0.0</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>3.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -138,6 +142,56 @@
         <dependency>
             <groupId>org.testcontainers</groupId>
             <artifactId>testcontainers</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.openliberty.features</groupId>
+            <artifactId>mpOpenAPI-3.0</artifactId>
+            <version>23.0.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>io.openliberty.features</groupId>
+            <artifactId>mpOpenAPI-3.0</artifactId>
+            <version>23.0.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>io.openliberty.features</groupId>
+            <artifactId>mpOpenAPI-3.0</artifactId>
+            <version>23.0.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>io.openliberty.features</groupId>
+            <artifactId>mpOpenAPI-3.0</artifactId>
+            <version>23.0.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>io.openliberty.features</groupId>
+            <artifactId>mpOpenAPI-3.0</artifactId>
+            <version>23.0.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>io.openliberty.features</groupId>
+            <artifactId>mpOpenAPI-3.0</artifactId>
+            <version>23.0.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>io.openliberty.features</groupId>
+            <artifactId>mpOpenAPI-3.0</artifactId>
+            <version>23.0.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>io.bitexpress.openapi</groupId>
+            <artifactId>cap-openapi</artifactId>
+            <version>0.4.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.softwaremill.sttp.apispec</groupId>
+            <artifactId>openapi-circe_3</artifactId>
+            <version>0.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.softwaremill.sttp.apispec</groupId>
+            <artifactId>openapi-circe_3</artifactId>
+            <version>0.6.0</version>
         </dependency>
     </dependencies>
 
