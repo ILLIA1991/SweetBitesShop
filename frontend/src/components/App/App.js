@@ -1,18 +1,20 @@
-import { Header } from "../Header/Header";
-import { Hero } from "../Hero/Hero";
-import { Donuts } from "../Donuts/Donuts";
-import { About } from "../About/About";
-import { Footer } from "../Footer/Footer";
-import "./App.css";
+import { lazy } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { Layout } from "../Layout/Layout";
+
+const Home = lazy(() => import("../../pages/Home/Home"));
 
 export const App = () => {
   return (
     <>
-      <Header />
-      <Hero />
-      <Donuts />
-      <About />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Route>
+      </Routes>
     </>
   );
 };
+
+export default App;

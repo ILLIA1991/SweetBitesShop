@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { mq, colors } from "../../utils";
 
-export const Wraper = styled.div`
+export const Wraper = styled.section`
   padding-left: 80px;
   padding-right: 80px;
   background-color: ${colors.pimkLight};
