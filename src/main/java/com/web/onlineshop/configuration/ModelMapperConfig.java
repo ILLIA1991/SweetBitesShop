@@ -1,9 +1,6 @@
 package com.web.onlineshop.configuration;
 
-import com.web.onlineshop.repository.mappers.ClientMapper;
-import com.web.onlineshop.repository.mappers.FlavourCategoryMapper;
-import com.web.onlineshop.repository.mappers.OrderMapper;
-import com.web.onlineshop.repository.mappers.ProductMapper;
+import com.web.onlineshop.repository.mappers.*;
 import org.mapstruct.factory.Mappers;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -31,5 +28,10 @@ public class ModelMapperConfig {
     @Bean
     public OrderMapper orderMapper() {
         return Mappers.getMapper(OrderMapper.class);
+    }
+
+    @Bean
+    public OrdersDetailsMapper ordersDetailsMapper() {
+        return Mappers.getMapper(OrdersDetailsMapper.class);
     }
 }
