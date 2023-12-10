@@ -33,14 +33,14 @@
             <version>3.2.0</version>
         </dependency>
         <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>6.1.7.Final</version> <!-- Указать актуальную версию -->
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>8.0.0.Final</version> <!-- Используйте актуальную версию -->
         </dependency>
         <dependency>
             <groupId>jakarta.persistence</groupId>
             <artifactId>jakarta.persistence-api</artifactId>
-            <version>3.0.0</version>
+            <version>3.1.0</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -94,16 +94,11 @@
             <artifactId>springfox-boot-starter</artifactId>
             <version>3.0.0</version>
         </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-boot-starter</artifactId>
-            <version>3.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>3.0.0</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.springfox</groupId>-->
+<!--            <artifactId>springfox-swagger-ui</artifactId>-->
+<!--            <version>3.0.0</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-testcontainers</artifactId>
@@ -144,40 +139,15 @@
             <artifactId>testcontainers</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.features</groupId>
-            <artifactId>mpOpenAPI-3.0</artifactId>
-            <version>23.0.0.6</version>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.1.0</version>
         </dependency>
-        <dependency>
-            <groupId>io.openliberty.features</groupId>
-            <artifactId>mpOpenAPI-3.0</artifactId>
-            <version>23.0.0.6</version>
-        </dependency>
-        <dependency>
-            <groupId>io.openliberty.features</groupId>
-            <artifactId>mpOpenAPI-3.0</artifactId>
-            <version>23.0.0.6</version>
-        </dependency>
-        <dependency>
-            <groupId>io.openliberty.features</groupId>
-            <artifactId>mpOpenAPI-3.0</artifactId>
-            <version>23.0.0.6</version>
-        </dependency>
-        <dependency>
-            <groupId>io.openliberty.features</groupId>
-            <artifactId>mpOpenAPI-3.0</artifactId>
-            <version>23.0.0.6</version>
-        </dependency>
-        <dependency>
-            <groupId>io.openliberty.features</groupId>
-            <artifactId>mpOpenAPI-3.0</artifactId>
-            <version>23.0.0.6</version>
-        </dependency>
-        <dependency>
-            <groupId>io.openliberty.features</groupId>
-            <artifactId>mpOpenAPI-3.0</artifactId>
-            <version>23.0.0.6</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.openliberty.features</groupId>-->
+<!--            <artifactId>mpOpenAPI-3.0</artifactId>-->
+<!--            <version>23.0.0.6</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>io.bitexpress.openapi</groupId>
             <artifactId>cap-openapi</artifactId>
@@ -267,5 +237,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
