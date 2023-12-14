@@ -2,8 +2,6 @@ package com.web.onlineshop.repository.model;
 
 import jakarta.persistence.*;
 
-import java.util.Objects;
-
 @Entity
 @Table(name = "flavour_categories")
 
@@ -20,11 +18,6 @@ public class FlavourCategory {
     public FlavourCategory() {
     }
 
-    public FlavourCategory(Integer id, NameFlavours name, String description) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-    }
 
     public Integer getId() {
         return id;
@@ -50,18 +43,6 @@ public class FlavourCategory {
         this.description = description;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        FlavourCategory that = (FlavourCategory) o;
-        return Objects.equals(id, that.id) && name == that.name && Objects.equals(description, that.description);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, description);
-    }
 
     @Override
     public String toString() {

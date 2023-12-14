@@ -1,7 +1,6 @@
 package com.web.onlineshop.repository.model;
 
 import jakarta.persistence.*;
-import java.util.Objects;
 
 @Entity
 @Table(name = "client")
@@ -98,18 +97,6 @@ public class Client  {
         this.phoneNumber = phoneNumber;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Client client = (Client) o;
-        return Objects.equals(id, client.id) && Objects.equals(name, client.name) && Objects.equals(surname, client.surname) && Objects.equals(email, client.email) && Objects.equals(address, client.address) && Objects.equals(country, client.country) && Objects.equals(phoneNumber, client.phoneNumber);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, surname, email, address, country, phoneNumber);
-    }
 
     @Override
     public String toString() {
