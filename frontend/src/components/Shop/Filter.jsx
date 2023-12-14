@@ -1,12 +1,35 @@
+import arrow from "../../img/arrow-defs.svg";
+import { StyledFilter } from "./Shop.styled";
+
 const Filter = () => {
   return (
-    <div>
+    <StyledFilter>
+      <div>
+        <h3>
+          Categories
+          <span>
+            <svg width="20" height="20">
+              <use xlinkHref={`${arrow}#icon-Vector`}></use>
+            </svg>
+          </span>
+        </h3>
+      </div>
       <ul>
-        <li>Filter 1</li>
-        <li>Filter 2</li>
-        <li>Filter 3</li>
+        <li>
+          {/* <input type="checkout" /> */}
+          <p>Banana</p>
+        </li>
+        <li>
+          <p>Strawberry</p>
+        </li>
+        <li>
+          <p>Cherry</p>
+        </li>
+        <li>
+          <p>Chocolate</p>
+        </li>
       </ul>
-    </div>
+    </StyledFilter>
   );
 };
 
