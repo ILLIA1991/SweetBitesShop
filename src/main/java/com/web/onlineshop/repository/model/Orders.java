@@ -3,7 +3,6 @@ package com.web.onlineshop.repository.model;
 import jakarta.persistence.*;
 
 import java.sql.Date;
-import java.util.Objects;
 
 @Entity
 @Table(name = "orders")
@@ -63,19 +62,6 @@ public class Orders {
 
     public void setComment(String comment) {
         this.comment = comment;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Orders orders = (Orders) o;
-        return Objects.equals(id, orders.id) && Objects.equals(clientId, orders.clientId) && Objects.equals(orderDate, orders.orderDate) && status == orders.status && Objects.equals(comment, orders.comment);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, clientId, orderDate, status, comment);
     }
 
     @Override
