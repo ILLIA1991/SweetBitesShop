@@ -3,6 +3,7 @@ import { mq, colors } from "../../utils";
 
 export const HeaderW = styled.header`
   background-color: ${colors.backgroundHeader};
+  padding-bottom: 78px;
 `;
 
 export const Wraper = styled.div`
@@ -10,8 +11,8 @@ export const Wraper = styled.div`
     justify-content: space-between;
     padding-top: 32px;
     align-items: center;
-     padding-left: 80px;
-  padding-right: 80px;
+    padding-left: 80px;
+    padding-right: 80px;
   }
   display: flex;
   justify-content: space-between;

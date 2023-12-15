@@ -9,7 +9,7 @@ export const Wraper = styled.section`
 `;
 export const Title = styled.h1`
   position: absolute;
-  top: 250px;
+  top: 330px;
   color: #fcf3f6;
   font-family: Gabarito;
   font-size: 85px;
@@ -20,7 +20,7 @@ export const Title = styled.h1`
 `;
 export const Button = styled.button`
   position: absolute;
-  top: 550px;
+  top: 587px;
   display: flex;
   width: 223px;
   height: 76px;
