@@ -33,11 +33,21 @@ export const FlexHeading = styled.div`
 export const FlexItemContainer = styled.div`
   display: flex;
   column-gap: 40px;
-  /* justify-content: space-between; */
 `;
 
 export const FlexFilterItem = styled.div`
   flex: 0 0 197px;
+  color: #d75d8e;
+
+  input {
+    width: 17px;
+    height: 17px;
+    margin-right: 6px;
+  }
+
+  p {
+    display: inline-block;
+  }
 `;
 
 export const Button = styled.button`
@@ -50,6 +60,7 @@ export const Button = styled.button`
   line-height: 34px;
   letter-spacing: 0em;
   text-align: left;
+  padding: 0;
 
   svg {
     fill: #d75d8e;
@@ -62,6 +73,8 @@ export const ProductList = styled.ul`
   justify-content: space-between;
 
   flex-wrap: wrap;
+
+  margin-bottom: 40px;
 `;
 
 export const ProductStyledItem = styled.li`
@@ -139,5 +152,33 @@ export const StyledFilter = styled.div`
     line-height: 29px;
     letter-spacing: 0em;
     text-align: left;
+  }
+`;
+
+export const LoadMoreStyledContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  button {
+    font-family: Gabarito;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 34px;
+    letter-spacing: 0em;
+    text-align: left;
+
+    padding-left: 0;
+    padding-right: 0;
+
+    color: #d75d8e;
+    background-color: transparent;
+    border: none;
+
+    ::after {
+      content: "";
+      display: block;
+      border: 3px solid #d75d8e;
+    }
   }
 `;

@@ -6,6 +6,7 @@ import {
   FlexFilterItem,
   FlexHeading,
   FlexItemContainer,
+  LoadMoreStyledContainer,
   ProductList,
   Section,
 } from "./Shop.styled";
@@ -29,15 +30,49 @@ const ShopMainContent = () => {
         </FlexHeading>
         <FlexItemContainer>
           <FlexFilterItem>
-            <Filter />
-            <Filter />
+            <Filter title="Categories">
+              <ul>
+                <li>
+                  <input type="checkbox" />
+                  <p>Donuts</p>
+                </li>
+                <li>
+                  <p>Macaroon</p>
+                </li>
+                <li>
+                  <p>Cupcakes</p>
+                </li>
+                <li>
+                  <p>Brownie</p>
+                </li>
+              </ul>
+            </Filter>
+            <Filter title="Filters">
+              <ul>
+                <li>
+                  <p>Banana</p>
+                </li>
+                <li>
+                  <p>Strawberry</p>
+                </li>
+                <li>
+                  <p>Cherry</p>
+                </li>
+                <li>
+                  <p>Chocolate</p>
+                </li>
+              </ul>
+            </Filter>
           </FlexFilterItem>
-          <ProductList>
-            <ProductItem />
-            <ProductItem />
-            <ProductItem />
-            <ProductItem />
-          </ProductList>
+          <LoadMoreStyledContainer>
+            <ProductList>
+              <ProductItem />
+              <ProductItem />
+              <ProductItem />
+              <ProductItem />
+            </ProductList>
+            <button>Load more</button>
+          </LoadMoreStyledContainer>
         </FlexItemContainer>
       </Container>
     </Section>
