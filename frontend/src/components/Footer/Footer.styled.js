@@ -2,10 +2,16 @@ import styled from "@emotion/styled";
 import { mq, colors } from "../../utils";
 
 export const Wraper = styled.footer`
-  padding-left: 80px;
-  padding-right: 80px;
-  padding-top: 80px;
+  padding-left: 30px;
+  padding-right: 30px;
   background-color: #d75d8e;
+  ${mq.tablet} {
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 80px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 `;
 
 export const WraperItems = styled.div`

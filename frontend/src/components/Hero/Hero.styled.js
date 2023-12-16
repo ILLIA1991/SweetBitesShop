@@ -2,10 +2,15 @@ import styled from "@emotion/styled";
 import { mq, colors } from "../../utils";
 
 export const Wraper = styled.section`
-  height: 960px;
-   padding-left: 80px;
-  padding-right: 80px;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 692px;
   background-color: ${colors.backgroundHeader};
+  ${mq.tablet} {
+    padding-left: 80px;
+    padding-right: 80px;
+    height: 960px;
+  }
 `;
 export const Title = styled.h1`
   position: absolute;
@@ -39,6 +44,10 @@ export const Span = styled.span`
 export const Img = styled.img`
   display: flex;
   margin-left: auto;
-  width: 785px;
-  height: 721.817px;
+  width: 519px;
+  height: 491px;
+  ${mq.tablet} {
+    width: 785px;
+    height: 721.817px;
+  }
 `;
