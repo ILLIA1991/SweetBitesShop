@@ -2,10 +2,16 @@ import styled from "@emotion/styled";
 import { mq, colors } from "../../utils";
 
 export const Wraper = styled.section`
-  padding-left: 80px;
-  padding-right: 80px;
+  padding-left: 30px;
+  padding-right: 30px;
+
   background-color: ${colors.pimkLight};
+  ${mq.tablet} {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
 `;
+
 export const Title = styled.h2`
   color: ${colors.primary};
   font-family: Gabarito;
@@ -19,5 +25,11 @@ export const Title = styled.h2`
 `;
 export const List = styled.ul`
   display: flex;
-  justify-content: space-between;
+  
+  ${mq.maxMobile} {
+    flex-direction: column;
+  }
+  ${mq.tablet} {
+    justify-content: space-between;
+  }
 `;

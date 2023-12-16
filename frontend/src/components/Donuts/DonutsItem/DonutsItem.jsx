@@ -2,12 +2,14 @@ import { Img, Items, Title, Span, Wraper } from "./DonutsItem.styled";
 
 export const DonutsItem = ({ title, imgUrl, price }) => {
   return (
-    <Wraper>
+    <>
       <Items>
-        <Img src={imgUrl} alt="donuts" />
+        <Wraper>
+          <Img src={imgUrl} alt="donuts" />
+        </Wraper>
+        <Title>{title}</Title>
+        <Span>{price}</Span>
       </Items>
-      <Title>{title}</Title>
-      <Span>{price}</Span>
-    </Wraper>
+    </>
   );
 };
