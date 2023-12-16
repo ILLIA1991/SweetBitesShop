@@ -1,4 +1,3 @@
-
 INSERT INTO public.product(id, name, category_id, price)
 VALUES
     (202, 'Cakes', 12, 4.32),

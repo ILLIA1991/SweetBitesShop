@@ -9,4 +9,10 @@ public interface FlavourCategoryService {
     List<FlavourCategoryDTO> getAllFlavours();
 
     FlavourCategoryDTO getFlavourById(Integer id);
+
+    Integer createFlavour(FlavourCategoryDTO flavourCategoryDTO);
+
+    void deleteById(Integer id);
+
+    FlavourCategoryDTO updateFlavour(Integer id, FlavourCategoryDTO flavourToUpdate);
 }

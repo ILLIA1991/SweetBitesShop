@@ -12,6 +12,10 @@ public class FlavourCategoryDTO {
 
     }
 
+    public FlavourCategoryDTO(Integer id) {
+        this.id = id;
+    }
+
     public FlavourCategoryDTO(Integer id, String name, String description) {
         this.id = id;
         this.name = name;
