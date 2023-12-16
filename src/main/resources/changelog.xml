@@ -6,9 +6,9 @@
 
 
     <include file="changelog/001-initial_db_setup.xml" relativeToChangelogFile="true"/>
-    <include file="changelog/002-insert_client_data.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/002-insert_flavour_categories_data.xml" relativeToChangelogFile="true"/>
     <include file="changelog/003-insert_product_data.xml" relativeToChangelogFile="true"/>
-    <include file="changelog/004-insert_flavour_categories_data.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/004-insert_client_data.xml" relativeToChangelogFile="true"/>
     <include file="changelog/005-insert_orders_data.xml" relativeToChangelogFile="true"/>
     <include file="changelog/006-insert_orders_details_data.xml" relativeToChangelogFile="true"/>
 
