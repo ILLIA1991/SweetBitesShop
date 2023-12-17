@@ -9,7 +9,6 @@ public class CustomErrorController implements ErrorController {
 
     @RequestMapping("/error")
     public String handleError() {
-        // Здесь вы можете вернуть свою собственную страницу ошибки или обработать ошибку иначе
         return "error";
     }
 }

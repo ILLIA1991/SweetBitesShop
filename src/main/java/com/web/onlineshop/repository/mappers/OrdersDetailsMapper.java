@@ -1,7 +1,6 @@
 package com.web.onlineshop.repository.mappers;
 
 import com.web.onlineshop.dto.OrderDetailsDTO;
-
 import com.web.onlineshop.repository.model.OrdersDetails;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
@@ -12,13 +11,9 @@ public interface OrdersDetailsMapper {
 
     OrdersDetailsMapper INSTANCE = Mappers.getMapper(OrdersDetailsMapper.class);
 
-    default OrderDetailsDTO toOrderDetailsDTO(OrdersDetails ordersDetails) {
-        return null;
-    }
+    OrderDetailsDTO toOrderDetailsDTO(OrdersDetails ordersDetails);
 
-    default OrdersDetails toOrdersDetails(OrderDetailsDTO orderDetailsDTO) {
-        return null;
-    }
+    OrdersDetails toOrdersDetails(OrderDetailsDTO orderDetailsDTO);
 
     void updateOrdersDetailsFromDTO(OrderDetailsDTO orderDetailsToUpdate, @MappingTarget OrdersDetails existingOrdersDetails);
 

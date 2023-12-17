@@ -1,5 +1,7 @@
 package com.web.onlineshop.dto;
 
+import com.web.onlineshop.repository.model.Product;
+
 import java.math.BigDecimal;
 import java.util.Objects;
 
@@ -72,5 +74,16 @@ public class ProductDTO {
     @Override
     public int hashCode() {
         return Objects.hash(id, name, flavourCategoryDTO, price);
+    }
+
+    public Product toProduct() {
+        Product product = new Product();
+        product.setId(this.id);
+        product.setName(this.name);
+        if (this.flavourCategoryDTO != null) {
+            product.setFlavourCategory(this.flavourCategoryDTO.toFlavourCategory());
+        }
+        product.setPrice(this.price);
+        return product;
     }
 }
