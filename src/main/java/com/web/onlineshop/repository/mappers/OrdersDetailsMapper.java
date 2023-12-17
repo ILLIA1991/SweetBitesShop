@@ -6,9 +6,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
-import org.springframework.context.annotation.Primary;
 
-@Primary
 @Mapper(componentModel = "spring", uses = {OrderMapper.class, ProductMapper.class})
 public interface OrdersDetailsMapper {
 
@@ -25,7 +23,5 @@ public interface OrdersDetailsMapper {
     @Mapping(target = "orders", source = "ordersDTO")
     @Mapping(target = "product", source = "productDTO")
     void updateOrdersDetailsFromDTO(OrderDetailsDTO orderDetailsToUpdate, @MappingTarget OrdersDetails existingOrdersDetails);
+
 }
-
-
-
