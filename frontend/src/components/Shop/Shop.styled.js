@@ -60,10 +60,13 @@ export const Button = styled.button`
   line-height: 34px;
   letter-spacing: 0em;
   text-align: left;
-  padding: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 
   svg {
+    display: inline-block;
     fill: #d75d8e;
+    margin-left: 7px;
   }
 `;
 
@@ -120,7 +123,6 @@ export const StyledFilter = styled.div`
   }
 
   h3 {
-    padding-left: 18px;
     margin-top: 12px;
     margin-bottom: 12px;
 
@@ -131,27 +133,74 @@ export const StyledFilter = styled.div`
     letter-spacing: 0em;
     text-align: left;
 
-    span {
+    svg {
       margin-left: 10px;
     }
   }
 
-  ul {
+  /* ul {
     padding-left: 20px;
     padding-right: 28px;
-  }
+  } */
 
   li:not(:last-child) {
     margin-bottom: 15px;
   }
 
-  p {
-    font-family: Gabarito;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 29px;
-    letter-spacing: 0em;
-    text-align: left;
+  li {
+    label {
+      position: relative;
+      cursor: pointer;
+
+      p {
+        font-family: Gabarito;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 29px;
+        letter-spacing: 0em;
+        text-align: left;
+
+        padding-left: 22px;
+      }
+
+      input {
+        position: absolute;
+        opacity: 0;
+
+        height: 0;
+        width: 0;
+      }
+
+      span {
+        position: absolute;
+        top: -1.5px;
+        left: 0;
+        height: 15px;
+        width: 15px;
+        background-color: inherit;
+        border: 1px solid;
+
+        ::after {
+          content: "";
+          position: absolute;
+          display: none;
+
+          left: 5px;
+          top: -0.5px;
+          width: 5px;
+          height: 10px;
+          border: solid #d75d8e;
+          border-width: 0 2px 2px 0;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+      }
+
+      input:checked ~ span::after {
+        display: inline-block;
+      }
+    }
   }
 `;
 

@@ -1,12 +1,10 @@
 import arrow from "../../img/arrow-defs.svg";
 
-const Icon = () => {
+const Icon = ({ width, height }) => {
   return (
-    <span>
-      <svg width="20" height="20">
-        <use xlinkHref={`${arrow}#icon-Vector`}></use>
-      </svg>
-    </span>
+    <svg width={width} height={height}>
+      <use xlinkHref={`${arrow}#icon-Vector`}></use>
+    </svg>
   );
 };
 

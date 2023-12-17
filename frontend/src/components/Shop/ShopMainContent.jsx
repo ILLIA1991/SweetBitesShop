@@ -11,7 +11,8 @@ import {
   Section,
 } from "./Shop.styled";
 
-import arrow from "../../img/arrow-defs.svg";
+import Icon from "./Icon";
+import Checkbox from "./Checkbox";
 
 const ShopMainContent = () => {
   return (
@@ -20,12 +21,8 @@ const ShopMainContent = () => {
         <FlexHeading>
           <h2>Shop</h2>
           <Button>
-            Sorted by{" "}
-            <span>
-              <svg width="20" height="20">
-                <use xlinkHref={`${arrow}#icon-Vector`}></use>
-              </svg>
-            </span>
+            Sorted by
+            <Icon width="15" height="9" />
           </Button>
         </FlexHeading>
         <FlexItemContainer>
@@ -33,33 +30,32 @@ const ShopMainContent = () => {
             <Filter title="Categories">
               <ul>
                 <li>
-                  <input type="checkbox" />
-                  <p>Donuts</p>
+                  <Checkbox text="Donuts" />
                 </li>
                 <li>
-                  <p>Macaroon</p>
+                  <Checkbox text="Macaroons" />
                 </li>
                 <li>
-                  <p>Cupcakes</p>
+                  <Checkbox text="Cupcakes" />
                 </li>
                 <li>
-                  <p>Brownie</p>
+                  <Checkbox text="Brownies" />
                 </li>
               </ul>
             </Filter>
             <Filter title="Filters">
               <ul>
                 <li>
-                  <p>Banana</p>
+                  <Checkbox text="Banana" />
                 </li>
                 <li>
-                  <p>Strawberry</p>
+                  <Checkbox text="Strawberry" />
                 </li>
                 <li>
-                  <p>Cherry</p>
+                  <Checkbox text="Cherry" />
                 </li>
                 <li>
-                  <p>Chocolate</p>
+                  <Checkbox text="Chocolate" />
                 </li>
               </ul>
             </Filter>

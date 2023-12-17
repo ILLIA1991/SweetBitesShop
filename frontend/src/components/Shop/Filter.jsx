@@ -7,7 +7,7 @@ const Filter = ({ title, children }) => {
       <div>
         <h3>
           {title}
-          <Icon />
+          <Icon width="15" height="9" />
         </h3>
         {children}
       </div>
