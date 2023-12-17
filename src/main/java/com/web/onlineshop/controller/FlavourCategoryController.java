@@ -3,10 +3,7 @@ package com.web.onlineshop.controller;
 import com.web.onlineshop.dto.FlavourCategoryDTO;
 import com.web.onlineshop.service.FlavourCategoryService;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,5 +27,20 @@ public class FlavourCategoryController {
     public FlavourCategoryDTO getById(@PathVariable Integer id) {
         return flavourCategoryService.getFlavourById(id);
     }
+
+   @PostMapping
+   public Integer flavourCreate(@RequestBody FlavourCategoryDTO flavourToCreate) {
+        return flavourCategoryService.createFlavour(flavourToCreate);
+   }
+
+   @DeleteMapping("/{id}")
+    public void delete(@PathVariable Integer id) {
+        flavourCategoryService.deleteById(id);
+   }
+
+   @PutMapping("/{id}")
+    public FlavourCategoryDTO update(@PathVariable Integer id, @RequestBody FlavourCategoryDTO flavourToUpdate) {
+        return flavourCategoryService.updateFlavour(id, flavourToUpdate);
+   }
 }
 
