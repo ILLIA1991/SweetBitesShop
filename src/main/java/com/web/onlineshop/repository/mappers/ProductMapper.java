@@ -11,14 +11,13 @@ public interface ProductMapper {
     ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
 
 
-    @Mapping(target = "flavourCategoryDTO", ignore = true)
+    @Mapping(source = "flavourCategory", target = "flavourCategoryDTO")
     ProductDTO toProductDTO(Product product);
 
-    @Mapping(target = "flavourCategory", source = "flavourCategoryDTO")
+    @Mapping(source = "flavourCategoryDTO", target = "flavourCategory")
     Product toProduct(ProductDTO productDTO);
 
-
-    @Mapping(target = "flavourCategory", source = "flavourCategoryDTO")
+    @Mapping(source = "flavourCategoryDTO", target = "flavourCategory")
     void updateProductFromDTO(ProductDTO productDTO, @MappingTarget Product product);
 
 }

@@ -1,13 +1,11 @@
 package com.web.onlineshop.dto;
 
-import com.web.onlineshop.repository.model.Client;
-
 import java.util.Date;
 import java.util.Objects;
 
 public class OrderDTO {
     private Integer id;
-    private Client clientId;
+    private ClientDTO clientDTO;
     private Date orderDate;
     private String status;
     private String comment;
@@ -15,9 +13,9 @@ public class OrderDTO {
     public OrderDTO() {
     }
 
-    public OrderDTO(Integer id, Client clientId, Date orderDate, String status, String comment) {
+    public OrderDTO(Integer id, ClientDTO clientDTO, Date orderDate, String status, String comment) {
         this.id = id;
-        this.clientId = clientId;
+        this.clientDTO = clientDTO;
         this.orderDate = orderDate;
         this.status = status;
         this.comment = comment;
@@ -31,12 +29,12 @@ public class OrderDTO {
         this.id = id;
     }
 
-    public Client getClientId() {
-        return clientId;
+    public ClientDTO getClientDTO() {
+        return clientDTO;
     }
 
-    public void setClientId(Client clientId) {
-        this.clientId = clientId;
+    public void setClientDTO(ClientDTO clientDTO) {
+        this.clientDTO = clientDTO;
     }
 
     public Date getOrderDate() {
@@ -68,20 +66,20 @@ public class OrderDTO {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         OrderDTO orderDTO = (OrderDTO) o;
-        return Objects.equals(id, orderDTO.id) && Objects.equals(clientId, orderDTO.clientId) && Objects.equals(orderDate, orderDTO.orderDate) && Objects.equals(status, orderDTO.status) && Objects.equals(comment, orderDTO.comment);
+        return Objects.equals(id, orderDTO.id) && Objects.equals(clientDTO, orderDTO.clientDTO) && Objects.equals(orderDate, orderDTO.orderDate) && Objects.equals(status, orderDTO.status) && Objects.equals(comment, orderDTO.comment);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, clientId, orderDate, status, comment);
+        return Objects.hash(id, clientDTO, orderDate, status, comment);
     }
 
     @Override
     public String toString() {
         return "OrderDTO{" +
                 "id=" + id +
-                ", clientId=" + clientId +
-                ", order_date=" + orderDate +
+                ", clientDTO=" + clientDTO +
+                ", orderDate=" + orderDate +
                 ", status='" + status + '\'' +
                 ", comment='" + comment + '\'' +
                 '}';

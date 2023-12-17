@@ -7,6 +7,8 @@ import com.web.onlineshop.repository.mappers.OrdersDetailsMapper;
 import com.web.onlineshop.repository.model.OrdersDetails;
 import com.web.onlineshop.repository.model.Product;
 import com.web.onlineshop.service.OrdersDetailsService;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -19,8 +21,8 @@ public class OrdersDetailsImpl implements OrdersDetailsService {
     private final OrdersDetailsMapper detailsMapper;
 
     private final ProductRepository productRepository;
-
-    public OrdersDetailsImpl(OrdersDetailsRepository detailsRepository, OrdersDetailsMapper detailsMapper, ProductRepository productRepository) {
+    @Autowired
+    public OrdersDetailsImpl(OrdersDetailsRepository detailsRepository, @Qualifier("ordersDetailsMapperImpl") OrdersDetailsMapper detailsMapper, ProductRepository productRepository) {
         this.detailsRepository = detailsRepository;
         this.detailsMapper = detailsMapper;
         this.productRepository = productRepository;
