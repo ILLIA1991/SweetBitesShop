@@ -8,21 +8,25 @@ import com.web.onlineshop.repository.model.Client;
 import com.web.onlineshop.service.ClientService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import com.web.onlineshop.validator.ClientValidator;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-@Transactional(readOnly = false)
+@Transactional(readOnly = true)
 public class ClientServiceImpl implements ClientService {
 
     private final ClientRepository clientRepository;
     private final ClientMapper clientMapper;
+    private final ClientValidator clientValidator;
+    private static final String CLIENT_NOT_FOUND_MESSAGE = "Client not found: ";
 
 
-    public ClientServiceImpl(ClientRepository clientRepository, ClientMapper clientMapper) {
+    public ClientServiceImpl(ClientRepository clientRepository, ClientMapper clientMapper, ClientValidator clientValidator) {
         this.clientRepository = clientRepository;
         this.clientMapper = clientMapper;
+        this.clientValidator = clientValidator;
     }
 
     /**
@@ -50,7 +54,7 @@ public class ClientServiceImpl implements ClientService {
      */
     @Override
     public ClientDTO getById(Integer id) {
-        Client client = clientRepository.findById(id).orElseThrow(() -> new OnlineShopNotFoundException("Client not found: " + id));
+        Client client = clientRepository.findById(id).orElseThrow(() -> new OnlineShopNotFoundException(CLIENT_NOT_FOUND_MESSAGE + id));
         return clientMapper.toClientDTO(client);
     }
 
@@ -66,13 +70,13 @@ public class ClientServiceImpl implements ClientService {
     public Integer createClient(ClientDTO clientsToCreate) {
         Client clientToSave = clientMapper.toClient(clientsToCreate);
         Client savedClient = clientRepository.save(clientToSave);
+        clientValidator.validateClient(clientsToCreate);
         return savedClient.getId();
     }
 
     @Override
     @Transactional
     public void deleteById(Integer id) {
-        //поскольку я просто удаляю клиента по идентификатору, нет необходимости в использовать MapStruct
         Client client = clientRepository.findById(id).orElseThrow(() -> new OnlineShopNotFoundException("You are not with us anymore!: " + id));
         clientRepository.delete(client);
 
@@ -82,16 +86,10 @@ public class ClientServiceImpl implements ClientService {
     @Transactional
     public ClientDTO updateClient(Integer id, ClientDTO clientsToUpdate) {
         Client existingClient = clientRepository.findById(id)
-                .orElseThrow(() -> new OnlineShopNotFoundException("Client not found: " + id));
-       // clientValidator.validateClient(clientsToUpdate);
-
-        // Применяю маппер для обновления полей
+                .orElseThrow(() -> new OnlineShopNotFoundException(CLIENT_NOT_FOUND_MESSAGE + id));
+        clientValidator.validateClient(clientsToUpdate);
         clientMapper.updateClientFromDTO(clientsToUpdate, existingClient);
-
-        // Сохраняю обновленного клиента в репозитории
         Client updatedClient = clientRepository.save(existingClient);
-
-        // Возвращаю обновленного клиента в виде DTO
         return clientMapper.toClientDTO(updatedClient);
 
     }

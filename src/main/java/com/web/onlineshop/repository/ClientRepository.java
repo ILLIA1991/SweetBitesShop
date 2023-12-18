@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface ClientRepository extends JpaRepository<Client, Integer> {
     List<Client> findAllByPhoneNumber(String phoneNumber);
+
+    Client findByEmail(String email);
 }

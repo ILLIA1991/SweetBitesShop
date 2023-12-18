@@ -1,9 +1,10 @@
 package com.web.onlineshop.controller;
-import io.swagger.v3.oas.annotations.Operation;
 
 import com.web.onlineshop.dto.ClientDTO;
 import com.web.onlineshop.service.ClientService;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,18 +26,18 @@ public class ClientController {
         return clientService.getById(id);
     }
 
-    @Operation( description = "In case no client is found, the response will have a status of 404")
+    @Operation(description = "In case no client is found, the response will have a status of 404")
     @GetMapping
     public List<ClientDTO> getAll() {
         return clientService.getAllClients();
     }
 
+
     @Operation(description = "In case the client is not created, the response will have a status of 404")
     @PostMapping
-    public Integer createUser(@RequestBody ClientDTO clientToCreate) {
+    public Integer createUser(@RequestBody @Valid ClientDTO clientToCreate) {
         return clientService.createClient(clientToCreate);
     }
-
     @Operation(description = "In case the client is not deleted by ID, the response will have a status of 404")
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) {
