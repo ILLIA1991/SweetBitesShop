@@ -34,7 +34,7 @@
     </changeSet>
     <changeSet author="Illia Belikau" id="1700557200553-3">
         <createTable tableName="client">
-            <column name="id" type="BIGINT">
+            <column  name="id" type="BIGINT" autoIncrement="true" >
                 <constraints nullable="false" primaryKey="true" primaryKeyName="client_pkey"/>
             </column>
             <column name="name" type="VARCHAR(100)">

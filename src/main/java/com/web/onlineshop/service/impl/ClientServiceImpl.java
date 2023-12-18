@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-@Transactional(readOnly = true)
+@Transactional(readOnly = false)
 public class ClientServiceImpl implements ClientService {
 
     private final ClientRepository clientRepository;
@@ -65,10 +65,7 @@ public class ClientServiceImpl implements ClientService {
     @Transactional
     public Integer createClient(ClientDTO clientsToCreate) {
         Client clientToSave = clientMapper.toClient(clientsToCreate);
-       // clientValidator.validateClient(clientsToCreate);
-        // Сохраняю нового клиента в репозитории
         Client savedClient = clientRepository.save(clientToSave);
-        // Возвращаю идентификатор созданного клиента
         return savedClient.getId();
     }
 
