@@ -22,7 +22,7 @@ public class OrdersDetailsImpl implements OrdersDetailsService {
 
     private final ProductRepository productRepository;
     @Autowired
-    public OrdersDetailsImpl(OrdersDetailsRepository detailsRepository, @Qualifier("ordersDetailsMapperImpl") OrdersDetailsMapper detailsMapper, ProductRepository productRepository) {
+    public OrdersDetailsImpl(OrdersDetailsRepository detailsRepository, @Qualifier("ordersDetailsMapper") OrdersDetailsMapper detailsMapper, ProductRepository productRepository) {
         this.detailsRepository = detailsRepository;
         this.detailsMapper = detailsMapper;
         this.productRepository = productRepository;

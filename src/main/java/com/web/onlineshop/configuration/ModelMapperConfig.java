@@ -11,15 +11,13 @@ public class ModelMapperConfig {
 
     @Bean
     public ClientMapper clientMapper() {
-
         return Mappers.getMapper(ClientMapper.class);
     }
 
-        @Bean
+    @Bean
     public ProductMapper productMapper() {
-
         return Mappers.getMapper(ProductMapper.class);
-}
+    }
 
     @Bean
     public FlavourCategoryMapper flavourCategoryMapper() {
