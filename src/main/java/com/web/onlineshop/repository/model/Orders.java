@@ -3,6 +3,7 @@ package com.web.onlineshop.repository.model;
 import jakarta.persistence.*;
 
 import java.sql.Date;
+import java.util.Objects;
 
 @Entity
 @Table(name = "orders")
@@ -12,7 +13,7 @@ public class Orders {
     private Integer id;
     @ManyToOne
     @JoinColumn (name = "client_id")
-    private Client clientId;
+    private Client client;
     @Column(name = "order_date")
     private Date orderDate;
     @Column(name = "status")
@@ -24,6 +25,14 @@ public class Orders {
     public Orders() {
     }
 
+    public Orders(Integer id, Client client, Date orderDate, StatusOrder status, String comment) {
+        this.id = id;
+        this.client = client;
+        this.orderDate = orderDate;
+        this.status = status;
+        this.comment = comment;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -32,12 +41,12 @@ public class Orders {
         this.id = id;
     }
 
-    public Client getClientId() {
-        return clientId;
+    public Client getClient() {
+        return client;
     }
 
-    public void setClientId(Client clientId) {
-        this.clientId = clientId;
+    public void setClient(Client client) {
+        this.client = client;
     }
 
     public Date getOrderDate() {
@@ -65,10 +74,23 @@ public class Orders {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Orders orders = (Orders) o;
+        return Objects.equals(id, orders.id) && Objects.equals(client, orders.client) && Objects.equals(orderDate, orders.orderDate) && status == orders.status && Objects.equals(comment, orders.comment);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, client, orderDate, status, comment);
+    }
+
+    @Override
     public String toString() {
         return "Orders{" +
                 "id=" + id +
-                ", clientId=" + clientId +
+                ", client=" + client +
                 ", orderDate=" + orderDate +
                 ", status=" + status +
                 ", comment='" + comment + '\'' +

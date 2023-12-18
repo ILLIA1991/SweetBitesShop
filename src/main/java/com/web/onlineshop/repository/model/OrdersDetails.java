@@ -11,10 +11,10 @@ public class OrdersDetails {
     private Integer id;
     @ManyToOne
     @JoinColumn(name = "orders_id")
-    private Orders ordersId;
+    private Orders orders;
     @ManyToOne
     @JoinColumn(name = "product_id")
-    private Product productId;
+    private Product product;
     @Column(name = "quantity")
     private Integer quantity;
     @Column(name = "total_price")
@@ -23,10 +23,10 @@ public class OrdersDetails {
     public OrdersDetails() {
     }
 
-    public OrdersDetails(Integer id, Orders ordersId, Product productId, Integer quantity, BigDecimal totalPrice) {
+    public OrdersDetails(Integer id, Orders orders, Product product, Integer quantity, BigDecimal totalPrice) {
         this.id = id;
-        this.ordersId = ordersId;
-        this.productId = productId;
+        this.orders = orders;
+        this.product = product;
         this.quantity = quantity;
         this.totalPrice = totalPrice;
     }
@@ -39,20 +39,20 @@ public class OrdersDetails {
         this.id = id;
     }
 
-    public Orders getOrdersId() {
-        return ordersId;
+    public Orders getOrders() {
+        return orders;
     }
 
-    public void setOrdersId(Orders ordersId) {
-        this.ordersId = ordersId;
+    public void setOrders(Orders ordersId) {
+        this.orders = ordersId;
     }
 
-    public Product getProductId() {
-        return productId;
+    public Product getProduct() {
+        return product;
     }
 
-    public void setProductId(Product productId) {
-        this.productId = productId;
+    public void setProduct(Product productId) {
+        this.product = productId;
     }
 
     public Integer getQuantity() {
@@ -76,8 +76,8 @@ public class OrdersDetails {
     public String toString() {
         return "OrdersDetails{" +
                 "id=" + id +
-                ", ordersId=" + ordersId +
-                ", productId=" + productId +
+                ", ordersId=" + orders +
+                ", productId=" + product +
                 ", quantity=" + quantity +
                 ", totalPrice=" + totalPrice +
                 '}';

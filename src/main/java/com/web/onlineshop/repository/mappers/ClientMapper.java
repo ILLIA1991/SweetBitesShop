@@ -18,7 +18,7 @@ public interface ClientMapper {
 
     Client toClient(ClientDTO clientDTO);
 
-    //ClientDTO map(Client client, Class<ClientDTO> clientDTOClass);
+
 
     void updateClientFromDTO(ClientDTO clientDTO, @MappingTarget Client client);
 
