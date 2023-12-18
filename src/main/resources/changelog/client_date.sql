@@ -4,4 +4,4 @@ VALUES
   (3875, 'Maksim', 'Krymov', 'krymau@gmail.com', 'Wroclaw, Stawowa', 'Poland', '48986729826'),
   (3982, 'Anna', 'Nowak', 'annanowak@gmail.com', 'Warsaw, Aleje Jerozolimskie 45', 'Poland', '48670451236'),
   (4021, 'Karolina', 'Kowalska', 'karolinakowalska@gmail.com', 'Krakow, Florianska 28', 'Poland', '48502147698')
-    ON CONFLICT (id) DO NOTHING;
+   ON CONFLICT (id) DO NOTHING;

@@ -30,10 +30,12 @@ public class ProductController {
         return productService.getAllProducts();
     }
 
+
     @Tag(name = "Creating a new product", description = "In case the product is not created, the response will have a status of 404")
     @PostMapping
     public Integer productCreate(@RequestBody ProductDTO productToCreate) {
         return productService.createProduct(productToCreate);
+
     }
 
     @Tag(name = "Delete a product by ID", description = "In case the product is not deleted by ID, the response will have a status of 404")

@@ -2,8 +2,8 @@ import styled from "@emotion/styled";
 import { mq, colors } from "../../../utils";
 
 export const Wraper = styled.div`
-  width: 391px;
-  height: 490px;
+  padding: 53px 45px;
+  background-color: ${colors.backgroundHeader};
 `;
 export const Img = styled.img`
   width: 299px;
@@ -12,12 +12,9 @@ export const Img = styled.img`
 
 export const Items = styled.li`
   display: flex;
-  width: 389px;
-  height: 412px;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  background-color: ${colors.backgroundHeader};
+  align-items: flex-start;
 `;
 export const Title = styled.h2`
   margin-top: 15px;

@@ -4,9 +4,17 @@ import { mq, colors } from "../../utils";
 export const HeaderW = styled.header`
   background-color: ${colors.backgroundHeader};
   padding-bottom: 78px;
+  ${mq.maxMobile} {
+    padding-bottom: 28px;
+  }
 `;
 
 export const Wraper = styled.div`
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   ${mq.tablet} {
     justify-content: space-between;
     padding-top: 32px;
@@ -14,9 +22,6 @@ export const Wraper = styled.div`
     padding-left: 80px;
     padding-right: 80px;
   }
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 `;
 export const Logo = styled.div`
   display: flex;

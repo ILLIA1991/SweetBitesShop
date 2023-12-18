@@ -1,5 +1,4 @@
 package com.web.onlineshop.repository.mappers;
-
 import com.web.onlineshop.dto.ProductDTO;
 import com.web.onlineshop.repository.model.Product;
 import org.mapstruct.Mapper;

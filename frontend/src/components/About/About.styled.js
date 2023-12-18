@@ -2,11 +2,15 @@ import styled from "@emotion/styled";
 import { mq, colors } from "../../utils";
 
 export const Section = styled.section`
-  padding-top: 90px;
-  padding-left: 80px;
-  padding-right: 80px;
-  padding-bottom: 90px;
+  padding-left: 30px;
+  padding-right: 30px;
   background-color: ${colors.pimkLight};
+  ${mq.tablet} {
+    padding-top: 90px;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-bottom: 90px;
+  }
 `;
 export const WrapImg = styled.div``;
 export const Img = styled.img`
@@ -20,9 +24,12 @@ export const Title = styled.h2`
   margin-bottom: 35px;
 `;
 export const Descr = styled.p`
-  width: 738px;
+  width: 420px;
   color: ${colors.primary};
   font-size: 26px;
+  ${mq.tablet} {
+    width: 738px;
+  }
 `;
 export const Wraper = styled.div`
   display: flex;

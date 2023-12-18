@@ -1,5 +1,8 @@
 package com.web.onlineshop.dto;
 
+import com.web.onlineshop.repository.mappers.FlavourCategoryMapper;
+import com.web.onlineshop.repository.model.FlavourCategory;
+
 import java.util.Objects;
 
 public class FlavourCategoryDTO {
@@ -66,5 +69,9 @@ public class FlavourCategoryDTO {
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 '}';
+    }
+
+    public FlavourCategory toFlavourCategory() {
+        return FlavourCategoryMapper.INSTANCE.toFlavourCategory(this);
     }
 }

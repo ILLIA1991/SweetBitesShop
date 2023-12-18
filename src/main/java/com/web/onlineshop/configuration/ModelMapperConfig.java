@@ -1,5 +1,6 @@
 package com.web.onlineshop.configuration;
 
+
 import com.web.onlineshop.repository.mappers.*;
 import org.mapstruct.factory.Mappers;
 import org.springframework.context.annotation.Bean;
@@ -14,11 +15,11 @@ public class ModelMapperConfig {
         return Mappers.getMapper(ClientMapper.class);
     }
 
-    @Bean
+        @Bean
     public ProductMapper productMapper() {
 
         return Mappers.getMapper(ProductMapper.class);
-    }
+}
 
     @Bean
     public FlavourCategoryMapper flavourCategoryMapper() {

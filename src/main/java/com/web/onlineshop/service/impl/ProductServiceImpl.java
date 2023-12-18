@@ -50,7 +50,6 @@ public class ProductServiceImpl implements ProductService {
         Product productToSave = productMapper.toProduct(productsToCreate);
         Product savedProduct = productRepository.save(productToSave);
         return savedProduct.getId();
-
     }
 
     @Override

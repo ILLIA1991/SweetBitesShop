@@ -19,6 +19,7 @@ public class ClientServiceImpl implements ClientService {
     private final ClientRepository clientRepository;
     private final ClientMapper clientMapper;
 
+
     public ClientServiceImpl(ClientRepository clientRepository, ClientMapper clientMapper) {
         this.clientRepository = clientRepository;
         this.clientMapper = clientMapper;
@@ -64,6 +65,7 @@ public class ClientServiceImpl implements ClientService {
     @Transactional
     public Integer createClient(ClientDTO clientsToCreate) {
         Client clientToSave = clientMapper.toClient(clientsToCreate);
+       // clientValidator.validateClient(clientsToCreate);
         // Сохраняю нового клиента в репозитории
         Client savedClient = clientRepository.save(clientToSave);
         // Возвращаю идентификатор созданного клиента
@@ -84,6 +86,7 @@ public class ClientServiceImpl implements ClientService {
     public ClientDTO updateClient(Integer id, ClientDTO clientsToUpdate) {
         Client existingClient = clientRepository.findById(id)
                 .orElseThrow(() -> new OnlineShopNotFoundException("Client not found: " + id));
+       // clientValidator.validateClient(clientsToUpdate);
 
         // Применяю маппер для обновления полей
         clientMapper.updateClientFromDTO(clientsToUpdate, existingClient);
