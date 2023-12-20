@@ -7,7 +7,7 @@ public class ValidationException extends RuntimeException {
 
     public ValidationException(String message, List<String> violations) {
         super(message);
-        this.violations = violations; // Замените "this.violations = this.violations" на это
+        this.violations = violations;
     }
 
     public List<String> getViolations() {

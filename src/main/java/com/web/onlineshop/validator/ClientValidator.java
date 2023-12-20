@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 import static org.hibernate.internal.util.StringHelper.isBlank;
 
 @Component
-public class ClientValidator {
+public class ClientValidator  {
 
     private static final Pattern ONLY_LETTERS_PATTERN = Pattern.compile("^[a-zA-Z]*$");
     private static final Pattern PHONE_NUMBER_PATTERN = Pattern.compile("\\d+");
