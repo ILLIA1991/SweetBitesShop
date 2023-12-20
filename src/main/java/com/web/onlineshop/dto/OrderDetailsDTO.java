@@ -6,7 +6,7 @@ import java.util.Objects;
 public class OrderDetailsDTO {
 
     private Integer id;
-    private OrderDTO ordersDTO;
+    private static OrderDTO ordersDTO;
     private ProductDTO productDTO;
     private Integer quantity;
     private BigDecimal totalPrice;
@@ -30,7 +30,7 @@ public class OrderDetailsDTO {
         this.id = id;
     }
 
-    public OrderDTO getOrdersDTO() {
+    public static OrderDTO getOrdersDTO() {
         return ordersDTO;
     }
 

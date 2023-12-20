@@ -1,4 +1,5 @@
 package com.web.onlineshop.repository.mappers;
+
 import com.web.onlineshop.dto.ProductDTO;
 import com.web.onlineshop.repository.model.Product;
 import org.mapstruct.Mapper;
@@ -10,7 +11,6 @@ import org.mapstruct.factory.Mappers;
 public interface ProductMapper {
     ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
 
-
     @Mapping(source = "flavourCategory", target = "flavourCategoryDTO")
     ProductDTO toProductDTO(Product product);
 
@@ -19,5 +19,4 @@ public interface ProductMapper {
 
     @Mapping(source = "flavourCategoryDTO", target = "flavourCategory")
     void updateProductFromDTO(ProductDTO productDTO, @MappingTarget Product product);
-
 }

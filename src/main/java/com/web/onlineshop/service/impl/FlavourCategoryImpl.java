@@ -18,9 +18,11 @@ public class FlavourCategoryImpl implements FlavourCategoryService {
     private final FlavourCategoryRepository flavourCategoryRepository;
     private final FlavourCategoryMapper flavourCategoryMapper;
 
+
     public FlavourCategoryImpl(FlavourCategoryRepository flavourCategoryRepository, FlavourCategoryMapper flavourCategoryMapper) {
         this.flavourCategoryRepository = flavourCategoryRepository;
         this.flavourCategoryMapper = flavourCategoryMapper;
+
     }
 
     @Override

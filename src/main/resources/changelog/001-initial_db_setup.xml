@@ -34,7 +34,7 @@
     </changeSet>
     <changeSet author="Illia Belikau" id="1700557200553-3">
         <createTable tableName="client">
-            <column  name="id" type="BIGINT" autoIncrement="true" >
+            <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="client_pkey"/>
             </column>
             <column name="name" type="VARCHAR(100)">
@@ -96,17 +96,25 @@
         </createTable>
     </changeSet>
     <changeSet author="Illia Belikau" id="1700557200553-6">
-        <addForeignKeyConstraint baseColumnNames="category_id" baseTableName="product" constraintName="category_id_fk" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="flavour_categories" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="category_id" baseTableName="product" constraintName="category_id_fk"
+                                 deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="id" referencedTableName="flavour_categories" validate="true"/>
     </changeSet>
     <changeSet author="Illia Belikau" id="1700557200553-7">
-        <addForeignKeyConstraint baseColumnNames="client_id" baseTableName="orders" constraintName="client_id" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="client" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="client_id" baseTableName="orders" constraintName="client_id"
+                                 deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="id" referencedTableName="client" validate="true"/>
     </changeSet>
     <changeSet author="Illia Belikau" id="1700557200553-8">
-        <addForeignKeyConstraint baseColumnNames="orders_id" baseTableName="orders_details" constraintName="orders_id_fk" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="orders" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="orders_id" baseTableName="orders_details"
+                                 constraintName="orders_id_fk" deferrable="false" initiallyDeferred="false"
+                                 onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id"
+                                 referencedTableName="orders" validate="true"/>
     </changeSet>
     <changeSet author="Illia Belikau" id="1700557200553-9">
-        <addForeignKeyConstraint baseColumnNames="product_id" baseTableName="orders_details" constraintName="product_id_fk" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="product" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="product_id" baseTableName="orders_details"
+                                 constraintName="product_id_fk" deferrable="false" initiallyDeferred="false"
+                                 onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id"
+                                 referencedTableName="product" validate="true"/>
     </changeSet>
-
-
 </databaseChangeLog>

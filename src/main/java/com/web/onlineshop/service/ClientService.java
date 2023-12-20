@@ -4,7 +4,6 @@ import com.web.onlineshop.dto.ClientDTO;
 
 import java.util.List;
 
-
 public interface ClientService {
 
     List<ClientDTO> getAllClients();

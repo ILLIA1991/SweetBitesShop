@@ -3,6 +3,7 @@ package com.web.onlineshop.repository.model;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
+
 @Entity
 @Table(name = "orders_details")
 public class OrdersDetails {
@@ -70,7 +71,6 @@ public class OrdersDetails {
     public void setTotalPrice(BigDecimal totalPrice) {
         this.totalPrice = totalPrice;
     }
-
 
     @Override
     public String toString() {

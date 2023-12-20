@@ -6,6 +6,7 @@ import com.web.onlineshop.repository.OrderRepository;
 import com.web.onlineshop.repository.mappers.OrderMapper;
 import com.web.onlineshop.repository.model.Orders;
 import com.web.onlineshop.service.OrderService;
+import com.web.onlineshop.validator.OrderValidator;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,10 +17,12 @@ public class OrderServiceImpl implements OrderService {
 
     private final OrderRepository orderRepository;
     private final OrderMapper orderMapper;
+    private final OrderValidator orderValidator;
 
-    public OrderServiceImpl(OrderRepository orderRepository, OrderMapper orderMapper) {
+    public OrderServiceImpl(OrderRepository orderRepository, OrderMapper orderMapper, OrderValidator orderValidator) {
         this.orderRepository = orderRepository;
         this.orderMapper = orderMapper;
+        this.orderValidator = orderValidator;
     }
 
     @Override
@@ -38,8 +41,9 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Integer createOrder(OrderDTO orderDTO) {
-        Orders orderToSave = orderMapper.toOrders(orderDTO);
+    public Integer createOrder(OrderDTO orderToCreate) {
+        orderValidator.validateOrder(orderToCreate);
+        Orders orderToSave = orderMapper.toOrders(orderToCreate);
         Orders savedOrder = orderRepository.save(orderToSave);
         return savedOrder.getId();
     }
@@ -53,6 +57,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public OrderDTO updateOrder(Integer id, OrderDTO orderToUpdate) {
+        orderValidator.validateOrder(orderToUpdate);
         Orders existingOrder = orderRepository.findById(id)
                 .orElseThrow(() -> new OnlineShopNotFoundException("Order not found: " + id));
         orderMapper.updateOrderFromDTO(orderToUpdate, existingOrder);

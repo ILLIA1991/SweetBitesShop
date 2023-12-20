@@ -6,9 +6,9 @@ import com.web.onlineshop.repository.ClientRepository;
 import com.web.onlineshop.repository.mappers.ClientMapper;
 import com.web.onlineshop.repository.model.Client;
 import com.web.onlineshop.service.ClientService;
+import com.web.onlineshop.validator.ClientValidator;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.web.onlineshop.validator.ClientValidator;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,11 +22,10 @@ public class ClientServiceImpl implements ClientService {
     private final ClientValidator clientValidator;
     private static final String CLIENT_NOT_FOUND_MESSAGE = "Client not found: ";
 
-
     public ClientServiceImpl(ClientRepository clientRepository, ClientMapper clientMapper, ClientValidator clientValidator) {
+        this.clientValidator = clientValidator;
         this.clientRepository = clientRepository;
         this.clientMapper = clientMapper;
-        this.clientValidator = clientValidator;
     }
 
     /**
@@ -36,10 +35,7 @@ public class ClientServiceImpl implements ClientService {
      */
     @Override
     public List<ClientDTO> getAllClients() {
-        // Извлекаем всех клиентов из репозитория (предположим, что они в формате Client)
         List<Client> allClients = clientRepository.findAll();
-
-        // Применяем маппер к каждому клиенту
         return allClients.stream()
                 .map(clientMapper::toClientDTO)
                 .collect(Collectors.toList());
@@ -68,9 +64,9 @@ public class ClientServiceImpl implements ClientService {
     @Override
     @Transactional
     public Integer createClient(ClientDTO clientsToCreate) {
+        clientValidator.validateClient(clientsToCreate);
         Client clientToSave = clientMapper.toClient(clientsToCreate);
         Client savedClient = clientRepository.save(clientToSave);
-        clientValidator.validateClient(clientsToCreate);
         return savedClient.getId();
     }
 
@@ -85,9 +81,9 @@ public class ClientServiceImpl implements ClientService {
     @Override
     @Transactional
     public ClientDTO updateClient(Integer id, ClientDTO clientsToUpdate) {
+        clientValidator.validateClient(clientsToUpdate);
         Client existingClient = clientRepository.findById(id)
                 .orElseThrow(() -> new OnlineShopNotFoundException(CLIENT_NOT_FOUND_MESSAGE + id));
-        clientValidator.validateClient(clientsToUpdate);
         clientMapper.updateClientFromDTO(clientsToUpdate, existingClient);
         Client updatedClient = clientRepository.save(existingClient);
         return clientMapper.toClientDTO(updatedClient);

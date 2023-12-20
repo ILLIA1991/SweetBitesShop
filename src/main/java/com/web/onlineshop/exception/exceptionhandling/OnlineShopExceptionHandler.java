@@ -1,6 +1,7 @@
 package com.web.onlineshop.exception.exceptionhandling;
 
 import com.web.onlineshop.exception.OnlineShopNotFoundException;
+import com.web.onlineshop.exception.ValidationException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -18,6 +19,11 @@ public class OnlineShopExceptionHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<String> handleMethodArgumentNotValidException(MethodArgumentNotValidException e) {
+        return ResponseEntity.status(BAD_REQUEST).body(e.getMessage());
+    }
+
+    @ExceptionHandler(ValidationException.class)
+    public ResponseEntity<String> handleValidationException(ValidationException e) {
         return ResponseEntity.status(BAD_REQUEST).body(e.getMessage());
     }
 }

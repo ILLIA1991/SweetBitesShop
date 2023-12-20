@@ -18,7 +18,6 @@ public class FlavourCategory {
     public FlavourCategory() {
     }
 
-
     public Integer getId() {
         return id;
     }

@@ -1,6 +1,5 @@
 package com.web.onlineshop.configuration;
 
-
 import com.web.onlineshop.repository.mappers.*;
 import org.mapstruct.factory.Mappers;
 import org.springframework.context.annotation.Bean;

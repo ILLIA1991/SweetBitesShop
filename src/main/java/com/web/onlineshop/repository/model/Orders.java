@@ -12,7 +12,7 @@ public class Orders {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @ManyToOne
-    @JoinColumn (name = "client_id")
+    @JoinColumn(name = "client_id")
     private Client client;
     @Column(name = "order_date")
     private Date orderDate;
