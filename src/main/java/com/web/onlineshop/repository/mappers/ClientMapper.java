@@ -11,16 +11,9 @@ public interface ClientMapper {
 
     ClientMapper INSTANCE = Mappers.getMapper(ClientMapper.class);
 
-    // Методы для преобразования между Entity и DTO
-
-
     ClientDTO toClientDTO(Client client);
 
     Client toClient(ClientDTO clientDTO);
 
-
-
     void updateClientFromDTO(ClientDTO clientDTO, @MappingTarget Client client);
-
-
 }

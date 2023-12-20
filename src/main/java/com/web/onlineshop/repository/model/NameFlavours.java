@@ -9,7 +9,6 @@ public enum NameFlavours {
 
     final String value;
 
-
     public String getValue() {
         return value;
     }

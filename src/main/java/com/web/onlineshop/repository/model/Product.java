@@ -12,15 +12,11 @@ public class Product {
     private Integer id;
     @Column(name = "name")
     private String name;
-
-    //@ManyToMany
-    //@Column(name = "category_id")
-    @ManyToOne //Добавил тут такую связь
+    @ManyToOne
     @JoinColumn(name = "category_id")
     private FlavourCategory flavourCategory;
     @Column(name = "price")
     private BigDecimal price;
-
 
     public Product() {
     }
@@ -63,7 +59,6 @@ public class Product {
     public void setPrice(BigDecimal price) {
         this.price = price;
     }
-
 
     @Override
     public String toString() {

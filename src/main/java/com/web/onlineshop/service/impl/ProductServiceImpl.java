@@ -7,6 +7,7 @@ import com.web.onlineshop.repository.ProductRepository;
 import com.web.onlineshop.repository.mappers.ProductMapper;
 import com.web.onlineshop.repository.model.Product;
 import com.web.onlineshop.service.ProductService;
+import com.web.onlineshop.validator.ProductValidator;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,12 +20,14 @@ public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
     private final FlavourCategoryRepository flavourCategoryRepository;
+    private final ProductValidator productValidator;
 
     private final ProductMapper productMapper;
 
-    public ProductServiceImpl(ProductRepository productRepository, FlavourCategoryRepository flavourCategoryRepository, ProductMapper productMapper) {
+    public ProductServiceImpl(ProductRepository productRepository, FlavourCategoryRepository flavourCategoryRepository, ProductValidator productValidator, ProductMapper productMapper) {
         this.productRepository = productRepository;
         this.flavourCategoryRepository = flavourCategoryRepository;
+        this.productValidator = productValidator;
         this.productMapper = productMapper;
     }
 
@@ -47,6 +50,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     @Transactional
     public Integer createProduct(ProductDTO productsToCreate) {
+        productValidator.validateProduct(productsToCreate);
         Product productToSave = productMapper.toProduct(productsToCreate);
         Product savedProduct = productRepository.save(productToSave);
         return savedProduct.getId();
@@ -63,6 +67,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     @Transactional
     public ProductDTO updateProduct(Integer id, ProductDTO productsToUpdate) {
+        productValidator.validateProduct(productsToUpdate);
         Product existingProduct = productRepository.findById(id)
                 .orElseThrow(() -> new OnlineShopNotFoundException("Product not found: " + id));
         productMapper.updateProductFromDTO(productsToUpdate, existingProduct);

@@ -1,6 +1,5 @@
 package com.web.onlineshop.dto;
 
-
 import java.util.Objects;
 
 public class ClientDTO {

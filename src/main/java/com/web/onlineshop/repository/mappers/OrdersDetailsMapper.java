@@ -9,7 +9,6 @@ import org.mapstruct.factory.Mappers;
 
 @Mapper(componentModel = "spring", uses = {OrderMapper.class, ProductMapper.class})
 public interface OrdersDetailsMapper {
-
     OrdersDetailsMapper INSTANCE = Mappers.getMapper(OrdersDetailsMapper.class);
 
     @Mapping(target = "ordersDTO", source = "orders")
@@ -23,5 +22,4 @@ public interface OrdersDetailsMapper {
     @Mapping(target = "orders", source = "ordersDTO")
     @Mapping(target = "product", source = "productDTO")
     void updateOrdersDetailsFromDTO(OrderDetailsDTO orderDetailsToUpdate, @MappingTarget OrdersDetails existingOrdersDetails);
-
 }
