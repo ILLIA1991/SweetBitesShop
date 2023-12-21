@@ -5,7 +5,7 @@
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
     <changeSet author="Illia Belikau" id="1700557200553-1">
         <createTable tableName="flavour_categories">
-            <column name="id" type="BIGINT">
+            <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="flavour_categories_pkey"/>
             </column>
             <column name="name" type="VARCHAR(100)">
@@ -18,7 +18,7 @@
     </changeSet>
     <changeSet author="Illia Belikau" id="1700557200553-2">
         <createTable tableName="product">
-            <column name="id" type="BIGINT">
+            <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="product_pkey"/>
             </column>
             <column name="name" type="VARCHAR(100)">
@@ -59,7 +59,7 @@
     </changeSet>
     <changeSet author="Illia Belikau" id="1700557200553-4">
         <createTable tableName="orders">
-            <column name="id" type="BIGINT">
+            <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="orders_pkey"/>
             </column>
             <column name="client_id" type="BIGINT">
@@ -78,7 +78,7 @@
     </changeSet>
     <changeSet author="Illia Belikau" id="1700557200553-5">
         <createTable tableName="orders_details">
-            <column name="id" type="BIGINT">
+            <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="orders_details_pkey"/>
             </column>
             <column name="orders_id" type="BIGINT">
