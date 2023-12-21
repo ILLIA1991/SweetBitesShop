@@ -43,8 +43,7 @@ public class ClientValidator {
     private void validateLetterField(String value, String fieldName, List<String> violations) {
         if (isBlank(value)) {
             violations.add(String.format("%s is blank", fieldName));
-        }
-        if (!ONLY_LETTERS_PATTERN.matcher(value).matches()) {
+        } else if (!ONLY_LETTERS_PATTERN.matcher(value).matches()) {
             violations.add(String.format("%s can contain only letters: '%s'", fieldName, value));
         }
     }
@@ -60,11 +59,15 @@ public class ClientValidator {
 
     private void validateEmail(ClientDTO clientDTO, List<String> violations) {
         if (!EMAIL_PATTERN.matcher(clientDTO.getEmail()).matches()) {
-            violations.add(String.format("invalid email: '%s'", clientDTO.getEmail()));
+            violations.add(String.format("Invalid email format: '%s'", clientDTO.getEmail()));
         }
-        Client byEmail = clientRepository.findByEmail(clientDTO.getEmail());
+
+        String emailToCheck = clientDTO.getEmail().toLowerCase(); // Приводим к нижнему регистру для сравнения
+        Client byEmail = clientRepository.findByEmail(emailToCheck);
+
         if (byEmail != null) {
-            violations.add(String.format("email '%s' is already used in the system. Please choose a different one!", clientDTO.getEmail()));
+            violations.add(String.format("Email '%s' is already used in the system. Please choose a different one!", clientDTO.getEmail()));
         }
     }
+
 }
