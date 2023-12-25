@@ -19,8 +19,7 @@ public interface ProductService {
 
     ProductDTO updateProduct(Integer id, ProductDTO productsToUpdate);
 
+    List<String> findProductsByFirstLetters(String firstLetters);
     List<ProductDTO> getAllProductsSortedByPriceAsc (BigDecimal page, BigDecimal size);
     List<ProductDTO> getAllProductsSortedByPriceDesc (BigDecimal page, BigDecimal size);
-
-
 }

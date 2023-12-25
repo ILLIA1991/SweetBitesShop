@@ -50,6 +50,11 @@ public class ProductController {
         return productService.updateProduct(id, productToUpdate);
     }
 
+    @Tag(name = "Fetching a product by first letters", description = "In case the product is not found, the response will have an empty list")
+    @GetMapping("/search/firstLetters")
+    public List<String> getByFirstLetters(@RequestParam String letters) {
+        return productService.findProductsByFirstLetters(letters);}
+
     @GetMapping("/sortAsc")
     @Tag(name = "Sorting", description = "Get all products sorted by price in ascending order")
     public List<ProductDTO> getAllProductsSortedByPriceAsc(@RequestParam(defaultValue = "0") BigDecimal page,

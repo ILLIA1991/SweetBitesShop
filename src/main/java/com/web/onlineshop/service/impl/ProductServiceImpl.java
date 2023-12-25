@@ -79,6 +79,11 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    @Transactional(readOnly = true)
+    public List<String> findProductsByFirstLetters(String letters) {
+        return productRepository.findProductByFirstLetters(
+             letters.substring(0, 1).toUpperCase() + letters.substring(1).toLowerCase() + "%");
+    }
     public List<ProductDTO> getAllProductsSortedByPriceAsc(BigDecimal page, BigDecimal size) {
         if (size.compareTo(BigDecimal.ONE) < 0) {
             throw new IllegalArgumentException("Page size must not be less than one");
@@ -103,7 +108,5 @@ public class ProductServiceImpl implements ProductService {
                 .map(productMapper::toProductDTO)
                 .collect(Collectors.toList());
     }
-
-
 }
 
