@@ -52,7 +52,7 @@ public class ProductController {
 
     @Tag(name = "Fetching a product by first letters", description = "In case the product is not found, the response will have an empty list")
     @GetMapping("/search/firstLetters")
-    public List<String> getByFirstLetters(@RequestParam String letters) {
+    public List<ProductDTO> getByFirstLetters(@RequestParam String letters) {
         return productService.findProductsByFirstLetters(letters);}
 
     @GetMapping("/sortAsc")

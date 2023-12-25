@@ -80,9 +80,12 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     @Transactional(readOnly = true)
-    public List<String> findProductsByFirstLetters(String letters) {
+    public List<ProductDTO> findProductsByFirstLetters(String letters) {
         return productRepository.findProductByFirstLetters(
-             letters.substring(0, 1).toUpperCase() + letters.substring(1).toLowerCase() + "%");
+             letters.substring(0, 1).toUpperCase() + letters.substring(1).toLowerCase() + "%")
+                .stream()
+                .map(productMapper::toProductDTO)
+                .collect(Collectors.toList());
     }
     public List<ProductDTO> getAllProductsSortedByPriceAsc(BigDecimal page, BigDecimal size) {
         if (size.compareTo(BigDecimal.ONE) < 0) {
