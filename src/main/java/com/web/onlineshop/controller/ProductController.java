@@ -5,6 +5,7 @@ import com.web.onlineshop.service.ProductService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Tag(name = "Product Management API", description = "API for CRUD operations with products")
@@ -47,5 +48,20 @@ public class ProductController {
     @PutMapping("/{id}")
     public ProductDTO update(@PathVariable Integer id, @RequestBody ProductDTO productToUpdate) {
         return productService.updateProduct(id, productToUpdate);
+    }
+
+    @GetMapping("/sortAsc")
+    @Tag(name = "Sorting", description = "Get all products sorted by price in ascending order")
+    public List<ProductDTO> getAllProductsSortedByPriceAsc(@RequestParam(defaultValue = "0") BigDecimal page,
+                                                           @RequestParam(defaultValue = "17") BigDecimal size) {
+
+        return productService.getAllProductsSortedByPriceAsc(page, size);
+    }
+
+    @GetMapping("/sortDesc")
+    @Tag(name = "Sorting", description = "Get all products sorted by price in descending order")
+    public List<ProductDTO> getAllProductsSortedByPriceDesc(@RequestParam(defaultValue = "0") BigDecimal page,
+                                                            @RequestParam(defaultValue = "17") BigDecimal size) {
+        return productService.getAllProductsSortedByPriceDesc(page, size);
     }
 }

@@ -8,9 +8,12 @@ import com.web.onlineshop.repository.mappers.ProductMapper;
 import com.web.onlineshop.repository.model.Product;
 import com.web.onlineshop.service.ProductService;
 import com.web.onlineshop.validator.ProductValidator;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -74,5 +77,33 @@ public class ProductServiceImpl implements ProductService {
         Product updatedProduct = productRepository.save(existingProduct);
         return productMapper.toProductDTO(updatedProduct);
     }
+
+    @Override
+    public List<ProductDTO> getAllProductsSortedByPriceAsc(BigDecimal page, BigDecimal size) {
+        if (size.compareTo(BigDecimal.ONE) < 0) {
+            throw new IllegalArgumentException("Page size must not be less than one");
+        }
+
+        List<Product> productList = productRepository.findAll(PageRequest.of(page.intValue(), size.intValue(), Sort.by(Sort.Direction.ASC, "price"))).getContent();
+
+        return productList.stream()
+                .map(productMapper::toProductDTO)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<ProductDTO> getAllProductsSortedByPriceDesc(BigDecimal page, BigDecimal size) {
+        if (size.compareTo(BigDecimal.ONE) < 0) {
+            throw new IllegalArgumentException("Page size must not be less than one");
+        }
+
+        List<Product> productList = productRepository.findAll(PageRequest.of(page.intValue(), size.intValue(), Sort.by(Sort.Direction.DESC, "price"))).getContent();
+
+        return productList.stream()
+                .map(productMapper::toProductDTO)
+                .collect(Collectors.toList());
+    }
+
+
 }
 
