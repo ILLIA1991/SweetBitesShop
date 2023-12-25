@@ -48,4 +48,10 @@ public class ProductController {
     public ProductDTO update(@PathVariable Integer id, @RequestBody ProductDTO productToUpdate) {
         return productService.updateProduct(id, productToUpdate);
     }
+
+    @Tag(name = "Fetching a product by first letters", description = "In case the product is not found, the response will have an empty list")
+    @GetMapping("/search/firstLetters")
+    public List<String> getByFirstLetters(@RequestParam String letters) {
+        return productService.findProductsByFirstLetters(letters);
+    }
 }

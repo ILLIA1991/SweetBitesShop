@@ -17,4 +17,6 @@ public interface ProductService {
     void deleteById(Integer id);
 
     ProductDTO updateProduct(Integer id, ProductDTO productsToUpdate);
+
+    List<String> findProductsByFirstLetters(String firstLetters);
 }

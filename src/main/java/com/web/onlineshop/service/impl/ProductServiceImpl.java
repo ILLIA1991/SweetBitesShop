@@ -74,5 +74,12 @@ public class ProductServiceImpl implements ProductService {
         Product updatedProduct = productRepository.save(existingProduct);
         return productMapper.toProductDTO(updatedProduct);
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<String> findProductsByFirstLetters(String letters) {
+        return productRepository.findProductByFirstLetters(
+             letters.substring(0, 1).toUpperCase() + letters.substring(1).toLowerCase() + "%");
+    }
 }
 
