@@ -59,7 +59,6 @@ public class ProductController {
     @Tag(name = "Sorting", description = "Get all products sorted by price in ascending order")
     public List<ProductDTO> getAllProductsSortedByPriceAsc(@RequestParam(defaultValue = "0") BigDecimal page,
                                                            @RequestParam(defaultValue = "17") BigDecimal size) {
-
         return productService.getAllProductsSortedByPriceAsc(page, size);
     }
 
