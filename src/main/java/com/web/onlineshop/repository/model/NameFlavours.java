@@ -24,7 +24,6 @@ public enum NameFlavours {
                 result = flavours;
                 break;
             }
-
         }
         return result;
     }

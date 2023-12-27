@@ -111,5 +111,14 @@ public class ProductServiceImpl implements ProductService {
                 .map(productMapper::toProductDTO)
                 .collect(Collectors.toList());
     }
+
+    @Override
+    @Transactional
+    public List<ProductDTO> findProductsByFlavour(String flavour) {
+        List<Product> productList = productRepository.findProductsByFlavour(flavour);
+        return productList.stream()
+                .map(productMapper::toProductDTO)
+                .collect(Collectors.toList());
+    }
 }
 

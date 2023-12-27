@@ -68,4 +68,28 @@ public class ProductController {
                                                             @RequestParam(defaultValue = "17") BigDecimal size) {
         return productService.getAllProductsSortedByPriceDesc(page, size);
     }
+
+    @GetMapping("/BANANA")
+    @Tag(name = "Search", description = "Get products with Banana flavour")
+    public List<ProductDTO> getProductsByBananaFlavour() {
+        return productService.findProductsByFlavour("Banana");
+    }
+
+    @GetMapping("/STRAWBERRY")
+    @Tag(name = "Search", description = "Get products with Strawberry flavour")
+    public List<ProductDTO> getProductsByStrawberryFlavour() {
+        return productService.findProductsByFlavour("Strawberry");
+    }
+
+    @GetMapping("/CHERRY")
+    @Tag(name = "Search", description = "Get products with Cherry flavour")
+    public List<ProductDTO> getProductsByCherryFlavour() {
+        return productService.findProductsByFlavour("Cherry");
+    }
+
+    @GetMapping("/CHOCOLATE")
+    @Tag(name = "Search", description = "Get products with Chocolate flavour")
+    public List<ProductDTO> getProductsByChocolateFlavour() {
+        return productService.findProductsByFlavour("Chocolate");
+    }
 }
