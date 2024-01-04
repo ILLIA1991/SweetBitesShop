@@ -5,12 +5,14 @@ import com.web.onlineshop.exception.OnlineShopNotFoundException;
 import com.web.onlineshop.repository.ClientRepository;
 import com.web.onlineshop.repository.mappers.ClientMapper;
 import com.web.onlineshop.repository.model.Client;
+import com.web.onlineshop.repository.model.Role;
 import com.web.onlineshop.service.ClientService;
 import com.web.onlineshop.validator.ClientValidator;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -64,7 +66,7 @@ public class ClientServiceImpl implements ClientService {
     @Override
     @Transactional
     public Integer createClient(ClientDTO clientsToCreate) {
-        clientValidator.validateClient(clientsToCreate);
+        //clientValidator.validateClient(clientsToCreate);
         Client clientToSave = clientMapper.toClient(clientsToCreate);
         Client savedClient = clientRepository.save(clientToSave);
         return savedClient.getId();
@@ -89,4 +91,39 @@ public class ClientServiceImpl implements ClientService {
         return clientMapper.toClientDTO(updatedClient);
 
     }
+
+    @Override
+    public ClientDTO assignRole(Integer id, Role newRole) {
+        Optional<Client> clientOptional = clientRepository.findById(id);
+        if (clientOptional.isPresent()) {
+            Client client = clientOptional.get();
+            client.setRole(newRole);
+            Client updatedClient = clientRepository.save(client);
+            return clientMapper.toClientDTO(updatedClient);
+        } else {
+            return null;
+        }
+    }
+    @Override
+    public ClientDTO blockClient (Integer id) {
+        return updateClientStatus(id, true);
+    }
+
+    @Override
+    public ClientDTO unblockClient (Integer id) {
+        return updateClientStatus(id, false);
+    }
+
+    public ClientDTO updateClientStatus (Integer id,boolean blocked){
+        Optional<Client> clientsOptional = clientRepository.findById(id);
+        if (clientsOptional.isPresent()) {
+            Client client = clientsOptional.get();
+            client.setBlocked(blocked);
+            Client updatedClient = clientRepository.save(client);
+            return clientMapper.toClientDTO(updatedClient);
+        } else {
+            return null;
+        }
+    }
+
 }
