@@ -64,7 +64,7 @@ public class ClientServiceImpl implements ClientService {
     @Override
     @Transactional
     public Integer createClient(ClientDTO clientsToCreate) {
-        clientValidator.validateClient(clientsToCreate);
+        //clientValidator.validateClient(clientsToCreate);
         Client clientToSave = clientMapper.toClient(clientsToCreate);
         Client savedClient = clientRepository.save(clientToSave);
         return savedClient.getId();
