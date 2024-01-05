@@ -1,6 +1,5 @@
 import React from "react";
 import { Wraper, Title, Button, Img, Span } from "./Hero.styled";
-import hero from "../../img/hero.png";
 import sprite from "../../img/symbol-defs.svg";
 import { Advantages } from "../Advantages/Advantages";
 
@@ -12,8 +11,8 @@ export const Hero = () => {
           Cakes for any <br />
           taste
         </Title>
+        <Img />
 
-        <Img src={hero} alt="hero" />
         <Button type="submit">
           <Span>Buy Now</Span>
           <svg width="28" height="28">
