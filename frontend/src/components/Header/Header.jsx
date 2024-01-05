@@ -39,6 +39,7 @@ export const Header = () => {
   return (
     <HeaderW>
       <Wraper>
+        
         <Logo>
           <HeaderLogo onClick={() => handleNavLinkClick("/")}>
             Sweet{" "}
@@ -123,7 +124,7 @@ export const Header = () => {
               <use href={sprite + `#icon-menu`}></use>
             </svg>
           </ToggleButton>
-          
+
         </SecondList>
       </Wraper>
     </HeaderW>

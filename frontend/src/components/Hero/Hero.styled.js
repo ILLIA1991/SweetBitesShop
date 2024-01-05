@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
 import { mq, colors } from "../../utils";
+import hero from "../../img/hero-mob.png";
+import hero2 from "../../img/hero-tabl.png";
 
 export const Wraper = styled.section`
   padding-left: 30px;
@@ -14,17 +16,20 @@ export const Wraper = styled.section`
 `;
 export const Title = styled.h1`
   position: absolute;
-  top: 330px;
+  top: 290px;
+  left: 30px;
   color: #fcf3f6;
-  font-family: Gabarito;
-  font-size: 85px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
+  font-size: 50px;
   text-transform: uppercase;
+  text-transform: uppercase;
+  ${mq.tablet} {
+    top: 330px;
+    font-size: 85px;
+  }
 `;
 export const Button = styled.button`
   position: absolute;
+
   top: 587px;
   display: flex;
   width: 223px;
@@ -41,13 +46,18 @@ export const Span = styled.span`
   font-family: Gabarito;
   font-size: 28px;
 `;
-export const Img = styled.img`
-  display: flex;
-  margin-left: auto;
-  width: 519px;
+
+export const Img = styled.div`
+  padding-left: 60px;
+  width: 419px;
   height: 491px;
+  background-image: url(${hero});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   ${mq.tablet} {
-    width: 785px;
-    height: 721.817px;
+    background-image: url(${hero2});
+    width: 519px;
+    height: 491px;
   }
 `;
