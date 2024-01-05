@@ -5,7 +5,7 @@ import hero2 from "../../img/hero-tabl.png";
 
 export const Wraper = styled.section`
   padding-left: 30px;
-  height: 692px;
+  padding-bottom: 34px;
   background-color: ${colors.backgroundHeader};
   ${mq.tablet} {
     padding-left: 80px;

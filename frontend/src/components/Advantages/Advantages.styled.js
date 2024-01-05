@@ -7,8 +7,8 @@ export const Wraper = styled.section`
 `;
 
 export const List = styled.ul`
+  display: flex;
   ${mq.tablet} {
-    display: flex;
     justify-content: space-between;
   }
   padding: 30px 80px;
