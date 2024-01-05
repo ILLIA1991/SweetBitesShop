@@ -31,10 +31,14 @@ public class Client {
     @JoinColumn(name = "role_id")
     private Role role;
 
+    @Column(name = "blocked")
+    private boolean blocked;
+
+
     public Client() {
     }
 
-    public Client(Integer id, String name, String surname, String email, String address, String country, String phoneNumber, Role role) {
+    public Client(Integer id, String name, String surname, String email, String address, String country, String phoneNumber, Role role, boolean blocked) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -43,6 +47,15 @@ public class Client {
         this.country = country;
         this.phoneNumber = phoneNumber;
         this.role = role;
+        this.blocked = blocked;
+    }
+
+    public boolean isBlocked() {
+        return blocked;
+    }
+
+    public void setBlocked(boolean blocked) {
+        this.blocked = blocked;
     }
 
     public Integer getId() {
@@ -120,6 +133,7 @@ public class Client {
                 ", country='" + country + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", role=" + role +
+                ", blocked=" + blocked +
                 '}';
     }
 }

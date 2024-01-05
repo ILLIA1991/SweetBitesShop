@@ -12,7 +12,6 @@ public interface ProductService {
 
     ProductDTO getById(Integer id);
 
-    @Transactional
     Integer createProduct(ProductDTO productsToCreate);
 
     void deleteById(Integer id);

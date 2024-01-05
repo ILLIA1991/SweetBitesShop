@@ -1,9 +1,11 @@
 package com.web.onlineshop.controller;
 
 import com.web.onlineshop.dto.ClientDTO;
+import com.web.onlineshop.repository.model.Role;
 import com.web.onlineshop.service.ClientService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -48,5 +50,29 @@ public class ClientController {
     @PutMapping("/{id}")
     public ClientDTO update(@PathVariable Integer id, @RequestBody ClientDTO clientToUpdate) {
         return clientService.updateClient(id, clientToUpdate);
+    }
+
+    @PostMapping("/{clientId}/assign-role")
+    public ResponseEntity<ClientDTO> assignRole(@PathVariable Integer clientId, @RequestParam Role newRole) {
+        ClientDTO client = clientService.assignRole(clientId, newRole);
+        return client != null
+                ? ResponseEntity.ok(client)
+                : ResponseEntity.notFound().build();
+    }
+
+    @PostMapping("/{clientId}/block")
+    public ResponseEntity<ClientDTO> blockClient(@PathVariable Integer clientId) {
+        ClientDTO client = clientService.blockClient(clientId);
+        return client != null
+                ? ResponseEntity.ok(client)
+                : ResponseEntity.notFound().build();
+    }
+
+    @PostMapping("/{clientId}/unblock")
+    public ResponseEntity<ClientDTO> unblockClient(@PathVariable Integer clientId) {
+        ClientDTO client = clientService.unblockClient(clientId);
+        return client != null
+                ? ResponseEntity.ok(client)
+                : ResponseEntity.notFound().build();
     }
 }
