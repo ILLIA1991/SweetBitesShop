@@ -19,7 +19,8 @@ import {
   Inst,
   Facebook,
   Twiter,
-  WrapContModal,LinkSoc
+  WrapContModal,
+  LinkSoc,
 } from "./Header.styled";
 
 export const Header = () => {
@@ -57,7 +58,6 @@ export const Header = () => {
           </CloseButton>
 
           <WrapContModal>
-
             <NavList>
               <NavItem>
                 <NavLink onClick={() => handleNavLinkClick("/")}>Home</NavLink>
@@ -88,12 +88,12 @@ export const Header = () => {
                 <LinkSoc href="">Twitter</LinkSoc>
               </Twiter>
             </NavSocial>
-            
-          </WrapContModal>
 
+          </WrapContModal>
         </Nav>
 
         <SecondList>
+
           <SecondItem>
             <a href="#">
               <svg width="20" height="20">
@@ -101,6 +101,7 @@ export const Header = () => {
               </svg>
             </a>
           </SecondItem>
+
           <SecondItem>
             <a href="#">
               <svg width="20" height="20">
@@ -108,6 +109,7 @@ export const Header = () => {
               </svg>
             </a>
           </SecondItem>
+
           <SecondItem>
             <a href="#">
               <svg width="20" height="20">
@@ -115,12 +117,14 @@ export const Header = () => {
               </svg>
             </a>
           </SecondItem>
+
+          <ToggleButton>
+            <svg width="20" height="20" onClick={toggleMenu}>
+              <use href={sprite + `#icon-menu`}></use>
+            </svg>
+          </ToggleButton>
+          
         </SecondList>
-        <ToggleButton>
-          <svg width="20" height="20" onClick={toggleMenu}>
-            <use href={sprite + `#icon-menu`}></use>
-          </svg>
-        </ToggleButton>
       </Wraper>
     </HeaderW>
   );

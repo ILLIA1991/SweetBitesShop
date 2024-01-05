@@ -13,6 +13,7 @@ export const HeaderW = styled.header`
 export const Wraper = styled.div`
   padding-left: 30px;
   padding-right: 30px;
+  padding-top: 43px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -38,11 +39,8 @@ export const Image = styled.img`
 export const HeaderLogo = styled.a`
   text-decoration: none;
   color: ${colors.white};
-  font-size: 14px;
+  font-size: 34px;
   cursor: pointer;
-  ${mq.tablet} {
-    font-size: 18px;
-  }
 
   ${mq.tablet} {
     font-size: 24px;
