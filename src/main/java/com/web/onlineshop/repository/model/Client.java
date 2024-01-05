@@ -27,11 +27,14 @@ public class Client {
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    public Client() {
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    private Role role;
 
+    public Client() {
     }
 
-    public Client(Integer id, String name, String surname, String email, String address, String country, String phoneNumber) {
+    public Client(Integer id, String name, String surname, String email, String address, String country, String phoneNumber, Role role) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -39,6 +42,7 @@ public class Client {
         this.address = address;
         this.country = country;
         this.phoneNumber = phoneNumber;
+        this.role = role;
     }
 
     public Integer getId() {
@@ -97,6 +101,14 @@ public class Client {
         this.phoneNumber = phoneNumber;
     }
 
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
     @Override
     public String toString() {
         return "Client{" +
@@ -107,6 +119,7 @@ public class Client {
                 ", address='" + address + '\'' +
                 ", country='" + country + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
+                ", role=" + role +
                 '}';
     }
 }
