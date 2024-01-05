@@ -5,7 +5,6 @@ import hero2 from "../../img/hero-tabl.png";
 
 export const Wraper = styled.section`
   padding-left: 30px;
-  padding-right: 30px;
   height: 692px;
   background-color: ${colors.backgroundHeader};
   ${mq.tablet} {
@@ -29,8 +28,7 @@ export const Title = styled.h1`
 `;
 export const Button = styled.button`
   position: absolute;
-
-  top: 587px;
+  top: 460px;
   display: flex;
   width: 223px;
   height: 76px;
@@ -40,6 +38,9 @@ export const Button = styled.button`
   background-color: transparent;
   border-radius: 70px;
   border: 4px solid #fcf3f6;
+  ${mq.tablet} {
+    top: 587px;
+  }
 `;
 export const Span = styled.span`
   color: ${colors.white};
@@ -48,8 +49,7 @@ export const Span = styled.span`
 `;
 
 export const Img = styled.div`
-  padding-left: 60px;
-  width: 419px;
+  margin-left: 30px;
   height: 491px;
   background-image: url(${hero});
   background-repeat: no-repeat;
