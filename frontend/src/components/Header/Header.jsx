@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { AiOutlineCloseCircle, AiOutlineFullscreen } from "react-icons/ai";
 import sprite from "../../img/symbol-defs.svg";
 import { useNavigate } from "react-router-dom";
 import {
@@ -16,6 +15,11 @@ import {
   SecondItem,
   CloseButton,
   ToggleButton,
+  NavSocial,
+  Inst,
+  Facebook,
+  Twiter,
+  WrapContModal,LinkSoc
 } from "./Header.styled";
 
 export const Header = () => {
@@ -47,27 +51,48 @@ export const Header = () => {
 
         <Nav id="nav-menu" className={isMenuOpen ? "show" : ""}>
           <CloseButton>
-            <AiOutlineCloseCircle
-              name="close-circle-outline"
-              onClick={toggleMenu}
-            ></AiOutlineCloseCircle>
+            <svg width="20" height="20" onClick={toggleMenu}>
+              <use href={sprite + `#icon-close`}></use>
+            </svg>
           </CloseButton>
-          <NavList>
-            <NavItem>
-              <NavLink onClick={() => handleNavLinkClick("/")}>Home</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink onClick={() => handleNavLinkClick("/about")}>
-                About
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink onClick={() => handleNavLinkClick("/shop")}>
-                Shop
-              </NavLink>
-            </NavItem>
-          </NavList>
+
+          <WrapContModal>
+
+            <NavList>
+              <NavItem>
+                <NavLink onClick={() => handleNavLinkClick("/")}>Home</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink onClick={() => handleNavLinkClick("/about")}>
+                  About
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink onClick={() => handleNavLinkClick("/shop")}>
+                  Shop
+                </NavLink>
+              </NavItem>
+            </NavList>
+
+            <NavSocial>
+              <Inst>
+                {" "}
+                <LinkSoc href="">Instagram</LinkSoc>
+              </Inst>
+              <Facebook>
+                {" "}
+                <LinkSoc href="">Facebook</LinkSoc>
+              </Facebook>
+              <Twiter>
+                {" "}
+                <LinkSoc href="">Twitter</LinkSoc>
+              </Twiter>
+            </NavSocial>
+            
+          </WrapContModal>
+
         </Nav>
+
         <SecondList>
           <SecondItem>
             <a href="#">
@@ -92,10 +117,9 @@ export const Header = () => {
           </SecondItem>
         </SecondList>
         <ToggleButton>
-          <AiOutlineFullscreen
-            name="menu-outline"
-            onClick={toggleMenu}
-          ></AiOutlineFullscreen>
+          <svg width="20" height="20" onClick={toggleMenu}>
+            <use href={sprite + `#icon-menu`}></use>
+          </svg>
         </ToggleButton>
       </Wraper>
     </HeaderW>

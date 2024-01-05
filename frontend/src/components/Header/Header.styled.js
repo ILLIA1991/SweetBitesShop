@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import background from "../../img/background.jpg";
 import { mq, colors } from "../../utils";
 
 export const HeaderW = styled.header`
@@ -55,17 +56,16 @@ export const Nav = styled.nav`
     position: fixed;
     top: 0px;
     right: -100%;
-    background-color: ${colors.backgroundHeader};
-    color: #eee;
-    width: 60%;
-    height: 35vh;
-    padding: 20px 20px;
+    background-image: url(${background});
+    width: 100%;
+    height: 100vh;
     z-index: 100;
     transition: 0.5s;
-    border-radius: 0 0 0 50%;
 
     &.show {
       right: 0;
+      display: flex;
+      justify-content: center;
     }
   }
 `;
@@ -77,6 +77,12 @@ export const NavList = styled.ul`
     flex-direction: row;
     gap: 160px;
   }
+  ${mq.maxTablet} {
+    padding-top: 214px;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+  }
 `;
 
 export const NavItem = styled.li`
@@ -86,12 +92,13 @@ export const NavItem = styled.li`
 export const NavLink = styled.button`
   font-family: Gabarito;
   background-color: transparent;
-  /* padding: 10px; */
-  color: ${colors.white};
-  font-size: 20px;
+  color: ${colors.primary};
+  font-size: 50px;
   border: none;
   cursor: pointer;
   ${mq.tablet} {
+    color: ${colors.white};
+    font-size: 20px;
     &:hover,
     &:focus {
       background-color: ${colors.pimkLight};
@@ -113,6 +120,7 @@ export const CloseButton = styled.button`
   display: block;
   color: white;
   background-color: transparent;
+  border: none;
 
   cursor: pointer;
   @media screen and (min-width: 760px) {
@@ -142,3 +150,26 @@ export const SecondList = styled.ul`
 `;
 
 export const SecondItem = styled.li``;
+
+export const NavSocial = styled.ul`
+  display: flex;
+  gap: 14px;
+  @media screen and (min-width: 760px) {
+    display: none;
+  }
+`;
+
+export const Inst = styled.li``;
+export const Facebook = styled.li``;
+export const Twiter = styled.li``;
+export const LinkSoc = styled.a`
+  color: #d86090;
+  font-size: 24px;
+  text-transform: capitalize;
+`;
+
+export const WrapContModal = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
