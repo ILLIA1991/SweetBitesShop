@@ -4,9 +4,10 @@ import { mq, colors } from "../../utils";
 
 export const HeaderW = styled.header`
   background-color: ${colors.backgroundHeader};
-  padding-bottom: 78px;
-  ${mq.maxMobile} {
-    padding-bottom: 28px;
+  padding-bottom: 28px;
+
+  ${mq.tablet} {
+    padding-bottom: 78px;
   }
 `;
 
