@@ -3,15 +3,16 @@ import { mq, colors } from "../../utils";
 
 export const Wraper = styled.section`
   background: ${colors.greanLight};
-  height: 104px;
+  padding: 30px 0 30px 36px;
+  ${mq.desktop} {
+    padding: 30px 80px;
+  }
 `;
 
 export const List = styled.ul`
   ${mq.tablet} {
-    display: flex;
-    justify-content: space-between;
+    display: inline;
   }
-  padding: 30px 80px;
 `;
 
 export const Item = styled.li`

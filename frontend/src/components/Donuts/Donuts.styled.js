@@ -24,7 +24,7 @@ export const Title = styled.h2`
   padding-bottom: 30px;
 `;
 export const List = styled.ul`
-  display: flex;
+  /* display: flex; */
   
   ${mq.maxMobile} {
     flex-direction: column;
