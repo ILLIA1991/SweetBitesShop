@@ -155,7 +155,7 @@ export const SecondItem = styled.li``;
 export const NavSocial = styled.ul`
   display: flex;
   gap: 14px;
-  @media screen and (min-width: 760px) {
+  ${mq.desktop} {
     display: none;
   }
 `;
