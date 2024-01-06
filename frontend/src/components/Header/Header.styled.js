@@ -73,12 +73,12 @@ export const Nav = styled.nav`
 
 export const NavList = styled.ul`
   flex-direction: column;
-  ${mq.tablet} {
+  ${mq.desktop} {
     display: flex;
     flex-direction: row;
     gap: 160px;
   }
-  ${mq.maxTablet} {
+  ${mq.maxDesktop} {
     padding-top: 214px;
     display: flex;
     gap: 50px;
@@ -97,7 +97,7 @@ export const NavLink = styled.button`
   font-size: 50px;
   border: none;
   cursor: pointer;
-  ${mq.tablet} {
+  ${mq.desktop} {
     color: ${colors.white};
     font-size: 20px;
     &:hover,
