@@ -6,17 +6,16 @@ import hero3 from "../../img/hero-desk.png";
 
 export const Wraper = styled.section`
   padding-left: 30px;
-  height: 692px;
+  padding-bottom: 35px;
   background-color: ${colors.backgroundHeader};
   ${mq.tablet} {
     padding-left: 40px;
     padding-right: 30px;
-    height: 960px;
   }
   ${mq.desktop} {
     padding-left: 80px;
     padding-right: 80px;
-    height: 960px;
+    padding-bottom: 75px;
   }
 `;
 export const Title = styled.h1`
@@ -37,7 +36,7 @@ export const Title = styled.h1`
 `;
 export const Button = styled.button`
   position: absolute;
-  top: 460px;
+  top: 405px;
   display: flex;
   width: 223px;
   height: 76px;
@@ -47,7 +46,7 @@ export const Button = styled.button`
   background-color: transparent;
   border-radius: 70px;
   border: 4px solid #fcf3f6;
-  ${mq.tablet} {
+  ${mq.desktop} {
     top: 587px;
   }
 `;
