@@ -72,17 +72,16 @@ export const Nav = styled.nav`
 `;
 
 export const NavList = styled.ul`
+  display: flex;
   flex-direction: column;
+  align-items: center;
   ${mq.desktop} {
-    display: flex;
     flex-direction: row;
     gap: 160px;
   }
   ${mq.maxDesktop} {
     padding-top: 214px;
-    display: flex;
     gap: 50px;
-    align-items: center;
   }
 `;
 
@@ -147,6 +146,7 @@ export const ToggleButton = styled.button`
 `;
 export const SecondList = styled.ul`
   display: flex;
+  align-items: center;
   gap: 20px;
 `;
 
