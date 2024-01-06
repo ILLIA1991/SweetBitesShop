@@ -22,6 +22,8 @@ export const Wraper = styled.div`
     justify-content: space-between;
     padding-top: 32px;
     align-items: center;
+  }
+  ${mq.desktop} {
     padding-left: 80px;
     padding-right: 80px;
   }
@@ -51,7 +53,7 @@ export const HeaderLogo = styled.a`
 export const Span = styled.span``;
 
 export const Nav = styled.nav`
-  @media screen and (max-width: 760px) {
+  ${mq.maxDesktop} {
     position: fixed;
     top: 0px;
     right: -100%;
@@ -122,7 +124,7 @@ export const CloseButton = styled.button`
   border: none;
 
   cursor: pointer;
-  @media screen and (min-width: 760px) {
+  ${mq.desktop} {
     display: none;
   }
 
@@ -139,7 +141,7 @@ export const ToggleButton = styled.button`
   cursor: pointer;
   border: none;
 
-  @media screen and (max-width: 760px) {
+  ${mq.maxDesktop} {
     display: inline;
   }
 `;
