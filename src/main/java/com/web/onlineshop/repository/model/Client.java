@@ -14,6 +14,8 @@ public class Client {
     private String surname;
     @Column(name = "email")
     private String email;
+    private String username;
+    private String password;
     @Column(name = "address")
     private String address;
     @Column(name = "country")
@@ -29,11 +31,13 @@ public class Client {
     public Client() {
     }
 
-    public Client(Integer id, String name, String surname, String email, String address, String country, String phoneNumber, Role role, boolean blocked) {
+    public Client(Integer id, String name, String surname, String username, String password, String email, String address, String country, String phoneNumber, Role role, boolean blocked) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.email = email;
+        this.username = username;
+        this.password = password;
         this.address = address;
         this.country = country;
         this.phoneNumber = phoneNumber;
@@ -71,6 +75,22 @@ public class Client {
 
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getEmail() {
@@ -120,6 +140,8 @@ public class Client {
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", email='" + email + '\'' +
+                ", username" + username + '\'' +
+                ", password" + password + '\'' +
                 ", address='" + address + '\'' +
                 ", country='" + country + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
