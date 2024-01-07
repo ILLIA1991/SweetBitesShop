@@ -1,25 +1,21 @@
 import sprite from "../../img/symbol-defs.svg";
 import { Wraper, List, Item, Span, SpanSec } from "./Advantages.styled";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { Autoplay } from "swiper/modules";
+import { Swiper } from "swiper/react";
+import "swiper/css";
 
 export const Advantages = () => {
-  const settings = {
-    dots: false,
-    arrows: false,
-    infinite: true,
-    autoplay: true,
-    adaptiveHeight: true,
-    speed: 500,
-    autoplaySpeed: 2000,
-    slidesToShow: 3,
-    cssEase: "linear",
-  };
   return (
     <Wraper>
       <List>
-        <Slider {...settings}>
+        <Swiper
+          slidesPerView={2}
+          centeredSlides={true}
+          autoplay={{
+            delay: 1000,
+          }}
+          modules={[Autoplay]}
+        >
           {icons.map((icon, index) => (
             <Item key={index}>
               <svg width="38" height="38">
@@ -30,32 +26,14 @@ export const Advantages = () => {
               </Span>
             </Item>
           ))}
-        </Slider>
+        </Swiper>
       </List>
     </Wraper>
   );
 };
 
-const icons = [
-  "#icon-banana",
-  "#icon-gluten",
-  "#icon-vegan",
-  "#icon-sugar",
-  "#icon-banana",
-  "#icon-gluten",
-  "#icon-vegan",
-  "#icon-sugar",
-];
-const labels = [
-  "Exotic",
-  "Sugar",
-  "Gluten",
-  "Vegan",
-  "Exotic",
-  "Sugar",
-  "Gluten",
-  "Vegan",
-];
-const subLabels = ["fruits", "free", "free", "fruits", "free", "free"];
+const icons = ["#icon-banana", "#icon-gluten", "#icon-vegan", "#icon-sugar"];
+const labels = ["Exotic", "Sugar", "Gluten", "Vegan"];
+const subLabels = ["fruits", "free", "free", "fruits"];
 
 export default Advantages;

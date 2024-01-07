@@ -1,8 +1,8 @@
-import { Img, Items, Title, Span, Wraper } from "./DonutsItem.styled";
+import { Img, Items, Title, Span, Wraper, List } from "./DonutsItem.styled";
 
 export const DonutsItem = ({ title, imgUrl, price }) => {
   return (
-    <>
+    <List>
       <Items>
         <Wraper>
           <Img src={imgUrl} alt="donuts" />
@@ -10,6 +10,6 @@ export const DonutsItem = ({ title, imgUrl, price }) => {
         <Title>{title}</Title>
         <Span>{price}</Span>
       </Items>
-    </>
+    </List>
   );
 };
