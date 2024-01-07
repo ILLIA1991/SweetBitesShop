@@ -3,6 +3,9 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { Layout } from "../Layout/Layout";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import "swiper/css";
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 const Home = lazy(() => import("../../pages/Home/Home"));
 

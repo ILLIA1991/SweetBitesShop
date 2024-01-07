@@ -23,13 +23,3 @@ export const Title = styled.h2`
   padding-top: 90px;
   padding-bottom: 30px;
 `;
-export const List = styled.ul`
-  /* display: flex; */
-  
-  ${mq.maxMobile} {
-    flex-direction: column;
-  }
-  ${mq.tablet} {
-    justify-content: space-between;
-  }
-`;
