@@ -95,6 +95,7 @@ export const Donuts = () => {
         // }}
         // modules={[Autoplay]}
         //!-------------------
+        
       >
         {data.map((donuts, i) => (
           <SwiperSlide key={i}>
