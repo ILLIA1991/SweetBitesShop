@@ -32,6 +32,7 @@ export const Advantages = () => {
   );
 };
 
+
 const icons = ["#icon-banana", "#icon-gluten", "#icon-vegan", "#icon-sugar"];
 const labels = ["Exotic", "Sugar", "Gluten", "Vegan"];
 const subLabels = ["fruits", "free", "free", "fruits"];
