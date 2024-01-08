@@ -1,6 +1,8 @@
 import { lazy } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { Layout } from "../Layout/Layout";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 const Home = lazy(() => import("../../pages/Home/Home"));
 
