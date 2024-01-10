@@ -4,7 +4,7 @@ import { mq, colors } from "../../utils";
 
 export const HeaderW = styled.header`
   background-color: ${colors.backgroundHeader};
-  padding-bottom: 28px;
+  padding-bottom: 27px;
 
   ${mq.tablet} {
     padding-bottom: 78px;
@@ -173,4 +173,5 @@ export const WrapContModal = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-bottom: 50px;
 `;
