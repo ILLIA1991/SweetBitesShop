@@ -19,7 +19,6 @@ public class SecurityOnlineShop {
 
     private static final String CLIENT_ROLE = "CLIENT";
     private static final String ADMIN_ROLE = "ADMIN";
-
     @Bean
     public InMemoryUserDetailsManager users() {
         User.UserBuilder users = User.withDefaultPasswordEncoder();
