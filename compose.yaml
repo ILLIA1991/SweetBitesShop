@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: pingwit_password
       PGDATA: /data/postgres
     volumes:
-      - postgres-db:/data/postgres
+      - sweetbitesshop_postgres-db:/data/postgres
     ports:
       - "5432:5432"
 
