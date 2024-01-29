@@ -28,6 +28,4 @@ public interface AdminService {
     void setSetting1(String value);
     void setSetting2(int value);
 
-
-
 }
