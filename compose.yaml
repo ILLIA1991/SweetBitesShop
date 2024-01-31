@@ -9,11 +9,17 @@ services:
       POSTGRES_PASSWORD: pingwit_password
       PGDATA: /data/postgres
     volumes:
-      - sweetbitesshop_postgres-db:/_data
+      - sweetbitesshop_postgres-db:/data/postgres
     ports:
       - "5432:5432"
 
+  java_app:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
 
 volumes:
-  postgres-db:
+  sweetbitesshop_postgres-db:
     driver: local
