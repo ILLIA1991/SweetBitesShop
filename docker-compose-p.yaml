@@ -1,5 +1,4 @@
-version: '3.1.5'
-
+version: '3'
 services:
   postgres:
     container_name: my_postgres_container
@@ -13,10 +12,12 @@ services:
     ports:
       - "5432:5432"
 
-  java_app:
+
+  spring-boot-app:
     build: .
+    container_name: spring-boot-container
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/sweet_bites_shop
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/sweet_bites_shop
       SPRING_DATASOURCE_USERNAME: pingwit
       SPRING_DATASOURCE_PASSWORD: pingwit_password
     ports:
