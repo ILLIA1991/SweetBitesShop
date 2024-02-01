@@ -1,10 +1,11 @@
-version: '3.1.5'
+version: '3'
 
 services:
   postgres:
     container_name: my_postgres_container
     image: postgres:14.8
     environment:
+      POSTGRES_DB: sweet_bites_shop #когда так прописываешь название БД, если при старте контейнера ее не существет, то она создастся. нам во время курсов это тоже пригодилось бы))
       POSTGRES_USER: pingwit
       POSTGRES_PASSWORD: pingwit_password
       PGDATA: /data/postgres
@@ -16,7 +17,7 @@ services:
   java_app:
     build: .
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/sweet_bites_shop
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/sweet_bites_shop
       SPRING_DATASOURCE_USERNAME: pingwit
       SPRING_DATASOURCE_PASSWORD: pingwit_password
     ports:
