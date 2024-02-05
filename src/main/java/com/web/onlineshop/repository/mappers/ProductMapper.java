@@ -15,7 +15,9 @@ public interface ProductMapper {
     ProductDTO toProductDTO(Product product);
 
     @Mapping(source = "flavourCategoryDTO", target = "flavourCategory")
-    Product toProduct(ProductDTO productDTO);
+    static Product toProduct(ProductDTO productDTO) {
+        return null;
+    }
 
     @Mapping(source = "flavourCategoryDTO", target = "flavourCategory")
     void updateProductFromDTO(ProductDTO productDTO, @MappingTarget Product product);
