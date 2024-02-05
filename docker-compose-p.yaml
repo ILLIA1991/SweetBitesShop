@@ -1,30 +1,30 @@
-version: '3'
-services:
-  postgres:
-    container_name: my_postgres_container
-    image: postgres:14.8
-    environment:
-      POSTGRES_USER: pingwit
-      POSTGRES_PASSWORD: pingwit_password
-      PGDATA: /data/postgres
-    volumes:
-      - sweetbitesshop_postgres-db:/data/postgres
-    ports:
-      - "5432:5432"
-
-
-  spring-boot-app:
-    build: .
-    container_name: spring-boot-container
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/sweet_bites_shop
-      SPRING_DATASOURCE_USERNAME: pingwit
-      SPRING_DATASOURCE_PASSWORD: pingwit_password
-    ports:
-      - "8080:8080"
-    depends_on:
-      - postgres
-
-volumes:
-  sweetbitesshop_postgres-db:
-    driver: local
+#version: '3'
+#services:
+#  postgres:
+#    container_name: my_postgres_container
+#    image: postgres:14.8
+#    environment:
+#      POSTGRES_USER: pingwit
+#      POSTGRES_PASSWORD: pingwit_password
+#      PGDATA: /data/postgres
+#    volumes:
+#      - sweetbitesshop_postgres-db:/data/postgres
+#    ports:
+#      - "5432:5432"
+#
+#
+#  spring-boot-app:
+#    build: .
+#    container_name: spring-boot-container
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/sweet_bites_shop
+#      SPRING_DATASOURCE_USERNAME: pingwit
+#      SPRING_DATASOURCE_PASSWORD: pingwit_password
+#    ports:
+#      - "8080:8080"
+#    depends_on:
+#      - postgres
+#
+#volumes:
+#  sweetbitesshop_postgres-db:
+#    driver: local
