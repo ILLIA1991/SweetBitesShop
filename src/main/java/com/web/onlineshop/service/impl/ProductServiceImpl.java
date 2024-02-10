@@ -54,7 +54,7 @@ public class ProductServiceImpl implements ProductService {
     @Transactional
     public Integer createProduct(ProductDTO productsToCreate) {
         productValidator.validateProduct(productsToCreate);
-        Product productToSave = productMapper.toProduct(productsToCreate);
+        Product productToSave = ProductMapper.toProduct(productsToCreate);
         Product savedProduct = productRepository.save(productToSave);
         return savedProduct.getId();
     }

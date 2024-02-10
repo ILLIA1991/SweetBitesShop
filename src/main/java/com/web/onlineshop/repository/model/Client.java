@@ -14,6 +14,7 @@ public class Client {
     private String surname;
     @Column(name = "email")
     private String email;
+    @Column(name = "username")
     private String username;
     private String password;
     @Column(name = "address")
@@ -26,7 +27,6 @@ public class Client {
     private Role role;
     @Column(name = "blocked")
     private boolean blocked;
-
 
     public Client() {
     }

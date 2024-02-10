@@ -1,7 +1,6 @@
 package com.web.onlineshop.service;
 
 import com.web.onlineshop.dto.ProductDTO;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -20,9 +19,9 @@ public interface ProductService {
 
     List<ProductDTO> findProductsByFirstLetters(String firstLetters);
 
-    List<ProductDTO> getAllProductsSortedByPriceAsc (BigDecimal page, BigDecimal size);
+    List<ProductDTO> getAllProductsSortedByPriceAsc(BigDecimal page, BigDecimal size);
 
-    List<ProductDTO> getAllProductsSortedByPriceDesc (BigDecimal page, BigDecimal size);
+    List<ProductDTO> getAllProductsSortedByPriceDesc(BigDecimal page, BigDecimal size);
 
     List<ProductDTO> findProductsByFlavour(String flavour);
 }

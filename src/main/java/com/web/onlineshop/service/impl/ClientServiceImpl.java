@@ -66,7 +66,6 @@ public class ClientServiceImpl implements ClientService {
     @Override
     @Transactional
     public Integer createClient(ClientDTO clientsToCreate) {
-        //clientValidator.validateClient(clientsToCreate);
         Client clientToSave = clientMapper.toClient(clientsToCreate);
         Client savedClient = clientRepository.save(clientToSave);
         return savedClient.getId();
@@ -104,17 +103,18 @@ public class ClientServiceImpl implements ClientService {
             return null;
         }
     }
+
     @Override
-    public ClientDTO blockClient (Integer id) {
+    public ClientDTO blockClient(Integer id) {
         return updateClientStatus(id, true);
     }
 
     @Override
-    public ClientDTO unblockClient (Integer id) {
+    public ClientDTO unblockClient(Integer id) {
         return updateClientStatus(id, false);
     }
 
-    public ClientDTO updateClientStatus (Integer id,boolean blocked){
+    public ClientDTO updateClientStatus(Integer id, boolean blocked) {
         Optional<Client> clientsOptional = clientRepository.findById(id);
         if (clientsOptional.isPresent()) {
             Client client = clientsOptional.get();
@@ -125,5 +125,4 @@ public class ClientServiceImpl implements ClientService {
             return null;
         }
     }
-
 }

@@ -4,6 +4,7 @@ import com.web.onlineshop.dto.ClientDTO;
 import com.web.onlineshop.exception.ValidationException;
 import com.web.onlineshop.repository.ClientRepository;
 import com.web.onlineshop.repository.model.Client;
+import com.web.onlineshop.repository.model.Role;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -66,5 +67,8 @@ public class ClientValidator  {
         if (byEmail != null) {
             violations.add(String.format("email '%s' is already used in the system. Please choose a different one!", clientDTO.getEmail()));
         }
+    }
+    public void validateRole(Role newRole) {
+
     }
 }

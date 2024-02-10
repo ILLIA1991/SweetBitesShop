@@ -11,7 +11,7 @@ public class FlavourCategory {
     private Integer id;
     @Column(name = "name")
     @Enumerated(EnumType.STRING)
-    private NameFlavours name; //изменили с flavour
+    private NameFlavours name;
     @Column(name = "description")
     private String description;
 

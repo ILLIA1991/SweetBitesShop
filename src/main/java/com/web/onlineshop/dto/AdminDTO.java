@@ -1,14 +1,9 @@
 package com.web.onlineshop.dto;
 
-import com.web.onlineshop.repository.model.Role;
-import jakarta.persistence.ManyToOne;
-
 import java.util.Objects;
 
 public class AdminDTO {
-
     private Long id;
-
     private String username;
     private String password;
 

@@ -41,17 +41,6 @@ public class OrdersDetailsImpl implements OrdersDetailsService {
                 .collect(Collectors.toList());
     }
 
-    /*
-   @Override
-    public BigDecimal calculateTotalPrice(Integer productId, Integer quantity) {
-        orderDetailsValidator.validateOrderDetails(orderDetailsDTO.getQuantity());
-        Product product = productRepository.findById(productId).orElse(null);
-        if (product == null) {
-            return null;
-        }
-        return product.getPrice()
-                .multiply(new BigDecimal(quantity));
-     */
     @Override
     public BigDecimal calculateTotalPrice(Integer productId, Integer quantity) {
         OrderDetailsDTO orderDetailsDTO = new OrderDetailsDTO();
