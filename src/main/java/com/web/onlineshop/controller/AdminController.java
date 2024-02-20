@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/admin/clients")
+@RequestMapping("/admin")
 public class AdminController {
 
     private final AdminService adminService;
@@ -29,7 +29,7 @@ public class AdminController {
     @Operation(description = "Get all clients")
     @GetMapping
     public List<ClientDTO> getAllClients() {
-        return adminService.getAllClients();
+ci        return adminService.getAllClients();
     }
 
     @Operation(description = "Create a new client. If the client is not created, the response will have a status of 404")
