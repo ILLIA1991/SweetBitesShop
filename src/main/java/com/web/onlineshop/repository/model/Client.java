@@ -16,6 +16,7 @@ public class Client {
     private String email;
     @Column(name = "username")
     private String username;
+    @Column(name = "password")
     private String password;
     @Column(name = "address")
     private String address;
