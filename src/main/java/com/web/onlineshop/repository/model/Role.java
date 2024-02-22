@@ -16,14 +16,14 @@ public enum Role {
         this.value = value;
     }
 
-    public static Role findByValue(String value) {
-        Role result = null;
-        for (Role role : values()) {
-            if (role.getValue().equalsIgnoreCase(value)) {
-                result = role;
-                break;
-            }
-        }
-        return result;
-    }
+//    public static Role findByValue(String value) {
+//        Role result = null;
+//        for (Role role : values()) {
+//            if (role.getValue().equalsIgnoreCase(value)) {
+//                result = role;
+//                break;
+//            }
+//        }
+//        return result;
+//    }
 }
