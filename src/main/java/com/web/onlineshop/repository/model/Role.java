@@ -1,29 +1,36 @@
 package com.web.onlineshop.repository.model;
 
-
 public enum Role {
 
     ADMIN("Admin"),
     CLIENT("Client");
 
-    final String value;
-
-    public String getValue() {
-        return value;
-    }
+    private final String value;
 
     Role(String value) {
         this.value = value;
     }
 
+    public String getValue() {
+        return value;
+    }
+
     public static Role findByValue(String value) {
-        Role result = null;
         for (Role role : values()) {
             if (role.getValue().equalsIgnoreCase(value)) {
-                result = role;
-                break;
+                return role;
             }
         }
-        return result;
+        return null;
+    }
+
+    public static void main(String[] args) {
+        String roleValue = "Client";
+        Role role = Role.findByValue(roleValue);
+        if (role != null) {
+            System.out.println("Role found: " + role.getValue());
+        } else {
+            System.out.println("Role not found for value: " + roleValue);
+        }
     }
 }
