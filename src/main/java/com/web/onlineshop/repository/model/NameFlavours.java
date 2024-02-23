@@ -17,14 +17,14 @@ public enum NameFlavours {
         this.value = value;
     }
 
-    public static NameFlavours findByValue(String value) {
-        NameFlavours result = null;
-        for (NameFlavours flavours : values()) {
-            if (flavours.getValue().equalsIgnoreCase(value)) {
-                result = flavours;
-                break;
-            }
-        }
-        return result;
-    }
+//    public static NameFlavours findByValue(String value) {
+//        NameFlavours result = null;
+//        for (NameFlavours flavours : values()) {
+//            if (flavours.getValue().equalsIgnoreCase(value)) {
+//                result = flavours;
+//                break;
+//            }
+//        }
+//        return result;
+//    }
 }
