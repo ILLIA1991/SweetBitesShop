@@ -136,15 +136,15 @@ public class AdminServiceImpl implements AdminService {
     public void setSetting2(int value) {
     }
 
-    @Override
-    public String getInterfaceTheme() {
-        return "DefaultTheme";
-    }
-
-    @Override
-    @Transactional
-    public void setInterfaceTheme(String theme) {
-    }
+//    @Override
+//    public String getInterfaceTheme() {
+//        return "DefaultTheme";
+//    }
+//
+//    @Override
+//    @Transactional
+//    public void setInterfaceTheme(String theme) {
+//    }
 
     @Override
     public int getMaxProductsPerPage() {
