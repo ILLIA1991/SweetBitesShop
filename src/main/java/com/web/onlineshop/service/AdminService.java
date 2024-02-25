@@ -35,9 +35,9 @@ public interface AdminService {
 
     void setSetting2(int value);
 
-//    String getInterfaceTheme();
-//
-//    void setInterfaceTheme(String theme);
+    String getInterfaceTheme();
+
+    void setInterfaceTheme(String theme);
 
     int getMaxProductsPerPage();
 
