@@ -27,7 +27,7 @@ public class ClientController {
         return clientService.getById(id);
     }
 
-    @Operation(description = "In case no client is found, the response will have a status of 404")
+    @Operation(description = "In case no client is  found, the response will have a status of 404")
     @GetMapping
     public List<ClientDTO> getAll() {
         return clientService.getAllClients();
@@ -40,7 +40,7 @@ public class ClientController {
         return clientService.createClient(clientToCreate);
     }
 
-    @Operation(description = "In case the client is not deleted by ID, the response will have a status of 404")
+    @Operation(description = "In case the client is not  deleted by ID, the response will have a status of 404")
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) {
         clientService.deleteById(id);
