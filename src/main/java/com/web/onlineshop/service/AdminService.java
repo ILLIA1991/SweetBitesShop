@@ -27,37 +27,15 @@ public interface AdminService {
     ClientDTO unblockClient(Integer id);
 
 
-    String getSetting1();
-
-    int getSetting2();
-
-    void setSetting1(String value);
-
-    void setSetting2(int value);
-
-    String getInterfaceTheme();
-
-    void setInterfaceTheme(String theme);
-
     int getMaxProductsPerPage();
 
     void setMaxProductsPerPage(int maxProductsPerPage);
 
-    String getOrderStatusNew();
-
-    String getOrderStatusProcessed();
-
-    String getOrderStatusDelivered();
 
     String getUserRoleAdmin();
 
     String getUserRoleClient();
 
-    String getPaymentMethodCreditCard();
-
-    String getPaymentMethodPayPal();
-
-    String getLanguage();
 
     ClientDTO updateClient(Integer id, ClientDTO clientToUpdate);
 

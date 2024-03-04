@@ -29,6 +29,8 @@ public class AdminServiceImpl implements AdminService {
     private final ClientValidator clientValidator;
     private final ProductValidator productValidator;
 
+    private int maxProductsPerPage = 10;
+
     public AdminServiceImpl(ProductRepository productRepository, ClientRepository clientRepository, ClientValidator clientValidator, ProductValidator productValidator) {
         this.productRepository = productRepository;
         this.clientRepository = clientRepository;
@@ -116,85 +118,27 @@ public class AdminServiceImpl implements AdminService {
         }
     }
 
-    @Override
-    public String getSetting1() {
-        return "Setting 1";
-    }
-
-    @Override
-    public int getSetting2() {
-        return 42;
-    }
-
-    @Override
-    @Transactional
-    public void setSetting1(String value) {
-    }
-
-    @Override
-    @Transactional
-    public void setSetting2(int value) {
-    }
-
-    @Override
-    public String getInterfaceTheme() {
-        return "DefaultTheme";
-    }
-
-    @Override
-    @Transactional
-    public void setInterfaceTheme(String theme) {
-    }
 
     @Override
     public int getMaxProductsPerPage() {
-        return 0;
+        return maxProductsPerPage;
     }
 
     @Override
     public void setMaxProductsPerPage(int maxProductsPerPage) {
-
-    }
-
-    @Override
-    public String getOrderStatusNew() {
-        return "New";
-    }
-
-    @Override
-    public String getOrderStatusProcessed() {
-        return "Processed";
-    }
-
-    @Override
-    public String getOrderStatusDelivered() {
-        return "Delivered";
+        this.maxProductsPerPage = maxProductsPerPage;
     }
 
     @Override
     public String getUserRoleAdmin() {
-        return "Admin";
+        return "ADMIN";
     }
 
     @Override
     public String getUserRoleClient() {
-        return "Client";
+        return "CLIENT";
     }
 
-    @Override
-    public String getPaymentMethodCreditCard() {
-        return "CreditCard";
-    }
-
-    @Override
-    public String getPaymentMethodPayPal() {
-        return "PayPal";
-    }
-
-    @Override
-    public String getLanguage() {
-        return "English";
-    }
 
     @Override
     @Transactional
