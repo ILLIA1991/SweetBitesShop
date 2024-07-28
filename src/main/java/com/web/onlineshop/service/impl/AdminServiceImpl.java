@@ -42,7 +42,8 @@ public class AdminServiceImpl implements AdminService {
     @Transactional
     public Integer createProduct(ProductDTO productCreate) {
         productValidator.validateProduct(productCreate);
-        Product productToSave = ProductMapper.toProduct(productCreate);
+        ProductMapper productMapper = ProductMapper.INSTANCE; // Создаем экземпляр ProductMapper
+        Product productToSave = productMapper.toProduct(productCreate); // Вызываем метод toProduct на созданном экземпляре
         Product savedProduct = productRepository.save(productToSave);
         return savedProduct.getId();
     }
